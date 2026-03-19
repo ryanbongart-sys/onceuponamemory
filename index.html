@@ -29,7 +29,16 @@
 
     <section class="enquiry" id="contact">
         <h2>Request an Enquiry</h2>
-        <form action="https://formspree.io/f/your-id-here" method="POST">
+    <form action="https://formspree.io/f/ryan.bongart@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Tell us about your event...." required></textarea>
+        
+        <input type="hidden" name="_subject" value="New Enquiry from Once Upon a Memory Designs">
+        
+        <button type="submit">Send Request</button>
+    </form>
+</section>
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Tell us about your event...." required></textarea>
