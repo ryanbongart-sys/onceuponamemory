@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Once Upon a Memory Designs | Custom Event Signage</title>
-    
     <link rel="stylesheet" href="style.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>Once Upon a Memory Designs</h1>
-        <p>✨ Custom Event Signage & Personalised Decor<br>
-        🎉 Weddings | Birthdays | Events | Celebrations of Life<br>
-        📍 Geelong | Pickup & Delivery Available<br>
-        💌 Message us for Quotes & Inspiration</p>
+        <div class="header-container">
+            <img src="logo.jpg" alt="Once Upon a Memory Designs Logo" class="logo">
+            <div class="header-text">
+                <h1>Once Upon a Memory Designs</h1>
+                <p>✨ Custom Event Signage & Personalised Decor<br>
+                🎉 Weddings | Birthdays | Events | Celebrations of Life<br>
+                📍 Geelong | Pickup & Delivery Available<br>
+                💌 Message us for Quotes & Inspiration</p>
+            </div>
+        </div>
     </header>
 
     <section class="gallery">
         <h2>Our Designs</h2>
         <div class="grid">
             <div class="card">
-                <img src="image1.jpg" alt="Custom Keepsake Design">
+                <img src="image1.jpg" alt="Custom Keepsake">
                 <p>Custom Keepsake</p>
             </div>
             <div class="card">
-                <img src="image2.jpg" alt="Event Stationery Design">
+                <img src="image2.jpg" alt="Event Stationery">
                 <p>Event Stationery</p>
             </div>
             <div class="card">
-                <img src="image3.jpg" alt="Digital Portrait Design">
+                <img src="image3.jpg" alt="Digital Portraits">
                 <p>Digital Portraits</p>
             </div>
         </div>
@@ -39,15 +42,16 @@
 
     <section class="enquiry" id="contact">
         <h2>Request an Enquiry</h2>
-        
-        <form action="mailto:ryan.bongart@gmail.com" method="GET" enctype="text/plain">
+        <form action="https://api.staticforms.xyz/submit" method="POST">
+            <input type="hidden" name="accessKey" value="PASTE_YOUR_KEY_HERE">
+            <input type="text" name="honeypot" style="display:none">
             
-            <input type="hidden" name="subject" value="New Website Enquiry - Once Upon a Memory">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Tell us about your event..." required></textarea>
             
-            <input type="text" name="Name" placeholder="Your Name" required>
-            <input type="email" name="Email" placeholder="Your Email" required>
-            
-            <textarea name="Message" rows="5" placeholder="Tell us about your event (Date, Location, Signage needed)..." required></textarea>
+            <input type="hidden" name="subject" value="New Website Enquiry">
+            <input type="hidden" name="redirectTo" value="https://onceuponamemory.com.au">
             
             <button type="submit">Send Request</button>
         </form>
@@ -55,7 +59,6 @@
 
     <footer>
         <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
-        <p><small>onceuponamemory.com.au</small></p>
     </footer>
 
 </body>
