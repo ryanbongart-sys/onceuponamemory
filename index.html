@@ -1,209 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Once Upon a Memory Designs | Custom Event Signage</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Once Upon a Memory Designs | Custom Event Signage | Geelong</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-
-        /* --- Animation Styles --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-            justify-items: center;
+        /* CSS Variables for colors and fonts */
+        :root {
+            --primary-blue: #1A365D; /* Dark navy blue from image */
+            --background-cream: #FDFBF4; /* Light cream background */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --font-serif: 'Cormorant Garamond', serif; /* Main headline */
+            --font-sans: 'Montserrat', sans-serif; /* Subheadings and body */
         }
 
-        /* The container that provides the 3D perspective */
-        .card {
-            background-color: transparent;
-            width: 300px;
-            height: 400px;
-            perspective: 1000px; 
-            border: none; /* Removing default border if any */
-        }
-
-        /* This wrapper handles the actual rotation */
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-        }
-
-        /* Flip effect on hover */
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-
-        /* Front and Back styling */
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Front Side */
-        .card-front {
-            background-color: #fff;
-        }
-     
-        .card-front img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-front p {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.9);
+        body {
             margin: 0;
-            padding: 15px 0;
-            font-family: 'Playfair Display', serif;
+            padding: 0;
+            background-color: var(--background-cream);
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Header Section (Blue Box) --- */
+        header {
+            background-color: var(--primary-blue);
+            padding: 40px 0;
+            display: flex;
+            justify-content: center; /* Horizontally center */
+            align-items: center;    /* Vertically center */
+        }
+
+        .logo {
+            max-width: 250px; /* Adjust based on your actual logo image size */
+            height: auto;
+            /* In a real project, this would be a real image:
+            content: url('./logo.jpg');
+            */
+            /* For the visualization, we simulate the logo from the image: */
+            width: 150px;
+            height: 150px;
+            border: 2px solid white;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* --- Services & Welcome Section --- */
+        .services-welcome {
+            text-align: center;
+            padding: 80px 20px 60px; /* Space above and below */
+        }
+
+        /* The Main Headline (Once Upon a Memory Designs) */
+        .main-headline {
+            font-family: var(--font-serif);
+            font-size: 4rem; /* Large and elegant */
+            color: var(--text-dark);
+            margin: 0 0 10px 0;
             font-weight: 600;
         }
 
-        /* Back Side */
-        .card-back {
-            background-color: #fdf8f5; /* A soft cream color to match event vibes */
-            color: #2c3e50;
+        /* The 'WHAT WE OFFER' sub-heading */
+        .sub-headline {
+            font-family: var(--font-sans);
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin: 0 0 30px 0;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* The detailed services tagline */
+        .services-tagline {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin: 0;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Optional separator line shown in some designs */
+        .services-welcome::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 1px;
+            background-color: var(--text-light);
+            margin: 40px auto 0;
+            opacity: 0.3;
+        }
+
+        /* --- Design Gallery Grid --- */
+        .design-gallery {
+            padding: 40px 20px 80px;
+            background-color: white; /* Optional contrast section */
+        }
+
+        .design-gallery h2 {
+            font-family: var(--font-sans);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        /* --- 3D Flip Card Styles --- */
+        .card {
+            position: relative;
+            perspective: 1000px; /* Key for 3D effect */
+            width: 100%;
+            height: 400px; /* Aspect ratio like the image */
+            cursor: pointer;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card:hover .card-inner,
+        .card.flipped .card-inner {
             transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-end; /* Text at bottom */
+        }
+
+        /* Placeholder images/visuals for cards */
+        .card-front::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        /* Specific Front Imagery */
+        .card-1 .card-front::before { background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Crect width="100" height="100" fill="%23eee" /%3E%3Ctext x="50%" y="50%" font-size="10" text-anchor="middle" fill="%23aaa"%3EWEDDING SIGN%3C/text%3E%3C/svg%3E'); }
+        .card-2 .card-front::before { background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Crect width="100" height="100" fill="%23ddd" /%3E%3Ctext x="50%" y="50%" font-size="10" text-anchor="middle" fill="%23aaa"%3EMEMORIAL SIGN%3C/text%3E%3C/svg%3E'); }
+        .card-3 .card-front::before { background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Crect width="100" height="100" fill="%23eee" /%3E%3Ctext x="50%" y="50%" font-size="10" text-anchor="middle" fill="%23aaa"%3EHIRE EQUIPMENT%3C/text%3E%3C/svg%3E'); }
+
+        .card-front-title {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
             padding: 20px;
-            border: 1px solid #eee;
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .card-back {
+            background-color: var(--primary-blue);
+            color: white;
+            transform: rotateY(180deg);
+            padding: 30px;
+            justify-content: center;
+            text-align: center;
         }
 
         .card-back h3 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 10px;
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            margin: 0 0 15px 0;
+            font-weight: 600;
         }
 
-        .card-back button {
-            background-color: #2c3e50;
+        .card-back p {
+            font-family: var(--font-sans);
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .enquire-btn {
+            background-color: transparent;
             color: white;
-            border: none;
-            padding: 10px 20px;
+            border: 2px solid white;
+            padding: 12px 30px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             border-radius: 5px;
-            margin-top: 15px;
             cursor: pointer;
-            font-family: 'Lato', sans-serif;
+            transition: background 0.3s;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            .card-inner { transition: none; }
+        .enquire-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .main-headline { font-size: 2.8rem; }
+            .sub-headline { font-size: 1.1rem; }
+            .services-tagline { font-size: 0.95rem; }
+            .grid-container { gap: 20px; }
+            .card { height: 350px; }
         }
     </style>
-
 </head>
 <body>
+
     <header>
-        <div class="header-container">
-            <img src="./logo.jpg" alt="Once Upon a Memory Designs Logo" class="logo">
-            <div class="header-text">
-                <h1>Once Upon a Memory Designs</h1>
-                <p>✨ Custom Event Signage & Personalised Decor<br>
-                🎉 Weddings | Birthdays | Events | Celebrations of Life<br>
-                📍 Geelong | Pickup & Delivery Available<br>
-                💌 Message us for Quotes & Inspiration</p>
-            </div>
+        <div class="logo">
+            LOGO
         </div>
     </header>
 
-    <section class="gallery">
-        <h2 style="text-align: center; font-family: 'Playfair Display'; margin-top: 40px;">Our Designs</h2>
-        <div class="grid">
+    <section class="services-welcome">
+        <h1 class="main-headline">Once Upon a Memory Designs</h1>
+        <h2 class="sub-headline">WHAT WE OFFER</h2>
+        <p class="services-tagline">
+            ✨ Custom Event Signage | 🎉 Weddings | Birthdays | 📍 Geelong | 💌 Pickup & Delivery | 🤍 Inquire Now
+        </p>
+    </section>
 
-        
-            <div class="card">
+    <section class="design-gallery">
+        <h2>OUR DESIGNS</h2>
+        <div class="grid-container">
+
+            <div class="card card-1" onclick="this.classList.toggle('flipped')">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="./DSC_0015.JPG" alt="Custom Wedding / Baby Event Signage">
-                        <p>Custom Wedding/Baby Event Signage</p>
+                        <p class="card-front-title">CUSTOM WEDDING & BABY SIGNAGE</p>
                     </div>
                     <div class="card-back">
-                        <h3>Custom Signage</h3>
-                        <p>Beautifully crafted acrylic or timber signs for your special day.</p>
-                        <a href="#contact"><button>Enquire Now</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="./image2.jpg" alt="Funeral Custom Memorials">
-                        <p>Funeral Custom Memorials</p>
-
-                    </div>
-                    <div class="card-back">
-                        <h3>Memorials</h3>
-                        <p>Personalised tributes to honor and celebrate a beautiful life.</p>
-                        <a href="#contact"><button>Enquire Now</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="image3.jpg" alt="Signage Hire">
-
-                        <p>Signage Hire</p>
-
-                    </div>
-                    <div class="card-back">
-                        <h3>Signage Equipment Hire</h3>
-                        <p>Signage Doesn't always have to be a keepsake, hire and return the special message.</p>
-                        <a href="#contact"><button>Enquire Now</button></a>
-
+                        <h3>WEDDINGS</h3>
+                        <p>Unique acrylic or timber signage for your special day.</p>
+                        <button class="enquire-btn">ENQUIRE NOW</button>
                     </div>
                 </div>
             </div>
 
+            <div class="card card-2" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <p class="card-front-title">MEMORIALS</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>MEMORIALS</h3>
+                        <p>Honoring a beautiful life with personalised tributes.</p>
+                        <button class="enquire-btn">ENQUIRE NOW</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-3" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <p class="card-front-title">SIGNAGE HIRE</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>SIGNAGE HIRE</h3>
+                        <p>Beautiful hire options for your Geelong event.</p>
+                        <button class="enquire-btn">ENQUIRE NOW</button>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
 
-    <section class="enquiry" id="contact">
-        <h2>Request an Enquiry</h2>
-        <form action="https://api.staticforms.xyz/submit" method="POST">
-            <input type="hidden" name="accessKey" value="sf_e2b142b6a4a457e9d9709f3b">
-            <input type="text" name="honeypot" style="display:none">
-
-            
-
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Tell us about your event..." required></textarea>
-
-            
-
-            <input type="hidden" name="subject" value="New Website Enquiry">
-            <input type="hidden" name="redirectTo" value="https://onceuponamemory.com.au">
-
-            <button type="submit">Send Request</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
-    </footer>
-
 </body>
-
 </html>
-
