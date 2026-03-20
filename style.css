@@ -15,9 +15,9 @@ header {
 
 .header-container {
     display: flex;
-    align-items: center; /* Vertically centers text with logo */
-    max-width: 2000px;
-    margin: 0 auto;
+    justify-content: center; /* This centers horizontally */
+    align-items: center;    /* This centers vertically */
+    height: 100%;           /* This ensures the container fills the height of the blue bar */
 }
 
 .logo {
