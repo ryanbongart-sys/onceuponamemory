@@ -6,26 +6,33 @@ body {
     line-height: 1.6; 
 }
 
-/* HEADER WITH LOGO ON LEFT */
-header { 
-    background: #0A145A; 
-    color: #FFF;
-    padding: 0; /* Removed padding so logo can touch edges */
-}
 
-.header-container {
+header {
+    background-color: #1A365D; /* Dark navy blue from image */
+    padding: 0;                /* CRITICAL: Removes space above/below */
+    height: 160px;             /* Set the total height you want for the header */
     display: flex;
-    justify-content: center; /* This centers horizontally */
-    align-items: center;    /* This centers vertically */
-    height: 100%;           /* This ensures the container fills the height of the blue bar */
+    justify-content: center;   /* Horizontally centers the logo */
+    align-items: center;       /* Vertically centers the logo */
+    overflow: hidden;          /* Ensures nothing spills out */
 }
 
+/* 2. Style the container to fill the header */
+.header-container {
+    height: 100%;              /* Fills the 160px height of the header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3. Make the logo image fit the vertical space */
 .logo {
-    height: 250px; /* Adjust this to make the header deeper or shallower */
-    width: auto;
-    display: block;
+    height: 100%;              /* CRITICAL: Force the image to be 160px tall */
+    width: auto;               /* Maintains the correct aspect ratio */
+    display: block;            /* Removes any default bottom whitespace */
+    
+    
 }
-
 .header-text {
     padding: 40px;
     flex-grow: 1;
