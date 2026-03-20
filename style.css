@@ -10,7 +10,6 @@ body {
 /* --- UPDATED HEADER CSS --- */
 header {
     background-color: #10115d; /* A dark slate blue */
-    padding: 20px 0;
     color: white;
 }
 
@@ -22,7 +21,7 @@ header {
     max-width: 2000px;            /* Boundary to prevent stretching on huge monitors */
     margin: 0 auto;               /* Centers the container on the screen */
     width: 100%;                  /* Takes full allowed width */
-    padding: 0 40px;              /* Side padding */
+                /* Side padding */
 }
 
 /* 2. Spacer and Search Container (Must be equal width for true centering) */
