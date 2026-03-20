@@ -1,222 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Once Upon a Memory Designs | Custom Event Signage</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- Continuous Loop Styles --- */
-        
-        .gallery {
-            overflow: hidden; /* Hide the cards that are off-screen */
-            padding: 60px 0;
-            background: #fdf8f5;
-        }
+<style>
+    /* --- Layout Fixes --- */
+    body { margin: 0; overflow-x: hidden; } /* Prevents side-scrolling on the whole page */
 
-        .slider {
-            display: flex;
-            width: calc(300px * 10); /* Total width: card width * number of cards */
-            animation: scroll 30s linear infinite;
-        }
+    .gallery {
+        padding: 80px 0;
+        background: #fff;
+        overflow: hidden; /* This acts as a 'window', hiding the cards outside of it */
+        width: 100%;
+        position: relative;
+    }
 
-        /* Pause animation on hover so users can interact with cards */
-        .slider:hover {
-            animation-play-state: paused;
-        }
+    .gallery h2 {
+        text-align: center;
+        font-family: 'Playfair Display', serif;
+        color: #0A145A;
+        margin-bottom: 50px;
+    }
 
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-300px * 5)); } /* Scroll half the total width */
-        }
+    /* --- The Animation Container --- */
+    .slider-track {
+        display: flex;
+        width: calc(330px * 10); /* (Card width 300px + 30px gap) * total cards */
+        animation: scroll 40s linear infinite;
+    }
 
-        .card {
-            flex-shrink: 0;
-            width: 300px;
-            height: 400px;
-            perspective: 1000px; 
-            margin: 0 15px; /* Spacing between cards */
-        }
+    /* Stop the scroll when someone wants to read a card */
+    .slider-track:hover {
+        animation-play-state: paused;
+    }
 
-        /* --- Existing Card Flip Logic --- */
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-        }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-330px * 5)); } /* Moves exactly half the track length */
+    }
 
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
+    /* --- Individual Card Styling --- */
+    .card {
+        flex: 0 0 300px; /* Forces cards to stay exactly 300px wide */
+        height: 400px;
+        margin: 0 15px; /* Creates the 30px total gap between cards */
+        perspective: 1000px;
+        position: relative;
+    }
 
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+    }
 
-        .card-front { background-color: #fff; }
-        .card-front img { width: 100%; height: 100%; object-fit: cover; }
-        .card-front p {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 0;
-            padding: 15px 0;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            color: #333;
-        }
+    .card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
 
-        .card-back {
-            background-color: #fff;
-            color: #2c3e50;
-            transform: rotateY(180deg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        border: 1px solid #eee;
+    }
 
-        .card-back h3 { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
-        .card-back button {
-            background-color: #0A145A;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .card-front img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-        @media (prefers-reduced-motion: reduce) {
-            .slider { animation: none; overflow-x: auto; }
-        }
-    </style>
-</head>
-<body>
+    .card-front p {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        margin: 0;
+        padding: 15px 0;
+        font-family: 'Playfair Display', serif;
+        color: #333;
+        text-align: center;
+    }
 
-    <header>
-        <div class="header-container">
-            <div class="header-text">
-                <h1>Once Upon a Memory Designs</h1>
-                <p>✨ Custom Event Signage & Personalised Decor<br>
-                📍 Geelong | Pickup & Delivery Available</p>
+    .card-back {
+        background-color: #fdf8f5;
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-back h3 { font-family: 'Playfair Display', serif; color: #0A145A; }
+    .card-back p { font-family: 'Lato', sans-serif; font-size: 0.9rem; color: #555; }
+
+    /* Button inside the back of the card */
+    .card-back button {
+        background: #0A145A;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .card-back button:hover { background: #bc936a; }
+
+    /* Respect user motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+        .slider-track { animation: none; overflow-x: auto; }
+    }
+</style>
+
+<section class="gallery">
+    <h2>Our Designs</h2>
+    <div class="slider-track">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="./DSC_0015.JPG" alt="Wedding"><p>Wedding / Baby Event</p></div>
+                <div class="card-back"><h3>Custom Signage</h3><p>Beautifully crafted acrylic signs.</p><a href="#contact"><button>Enquire</button></a></div>
             </div>
         </div>
-    </header>
-
-    <section class="gallery">
-        <h2 style="text-align: center; font-family: 'Playfair Display'; margin-bottom: 40px; color: #333;">Our Designs</h2>
-        
-        <div class="slider">
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="./DSC_0015.JPG" alt="Wedding Signage">
-                        <p>Wedding / Baby Event</p>
-                    </div>
-                    <div class="card-back"><h3>Custom Signage</h3><p>Beautifully crafted acrylic signs.</p><button>Enquire</button></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="./image2.jpg" alt="Memorials">
-                        <p>Funeral Custom Memorials</p>
-                    </div>
-                    <div class="card-back"><h3>Memorials</h3><p>Personalised tributes.</p><button>Enquire</button></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="image3.jpg" alt="Digital Portraits">
-                        <p>Digital Portraits</p>
-                    </div>
-                    <div class="card-back"><h3>Digital Art</h3><p>Hand-drawn portraits.</p><button>Enquire</button></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="image4.jpg" alt="Birthday Signs">
-                        <p>Birthday Milestones</p>
-                    </div>
-                    <div class="card-back"><h3>Birthdays</h3><p>Make every age special.</p><button>Enquire</button></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="image5.jpg" alt="Seating Charts">
-                        <p>Seating Charts</p>
-                    </div>
-                    <div class="card-back"><h3>Event Planning</h3><p>Organize with style.</p><button>Enquire</button></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="./DSC_0015.JPG" alt="Wedding Signage">
-                        <p>Wedding / Baby Event</p>
-                    </div>
-                    <div class="card-back"><h3>Custom Signage</h3><p>Beautifully crafted acrylic signs.</p><button>Enquire</button></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="./image2.jpg" alt="Memorials">
-                        <p>Funeral Custom Memorials</p>
-                    </div>
-                    <div class="card-back"><h3>Memorials</h3><p>Personalised tributes.</p><button>Enquire</button></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="image3.jpg" alt="Digital Portraits">
-                        <p>Digital Portraits</p>
-                    </div>
-                    <div class="card-back"><h3>Digital Art</h3><p>Hand-drawn portraits.</p><button>Enquire</button></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="image4.jpg" alt="Birthday Signs">
-                        <p>Birthday Milestones</p>
-                    </div>
-                    <div class="card-back"><h3>Birthdays</h3><p>Make every age special.</p><button>Enquire</button></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="image5.jpg" alt="Seating Charts">
-                        <p>Seating Charts</p>
-                    </div>
-                    <div class="card-back"><h3>Event Planning</h3><p>Organize with style.</p><button>Enquire</button></div>
-                </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="./image2.jpg" alt="Memorials"><p>Funeral Memorials</p></div>
+                <div class="card-back"><h3>Memorials</h3><p>Tributes to honor a beautiful life.</p><a href="#contact"><button>Enquire</button></a></div>
             </div>
         </div>
-    </section>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="image3.jpg" alt="Portraits"><p>Digital Portraits</p></div>
+                <div class="card-back"><h3>Digital Art</h3><p>Unique hand-drawn memories.</p><a href="#contact"><button>Enquire</button></a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="image4.jpg" alt="Birthdays"><p>Birthday Decor</p></div>
+                <div class="card-back"><h3>Birthdays</h3><p>Signage for every milestone.</p><a href="#contact"><button>Enquire</button></a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="image5.jpg" alt="Events"><p>Corporate Events</p></div>
+                <div class="card-back"><h3>Events</h3><p>Professional branding & signs.</p><a href="#contact"><button>Enquire</button></a></div>
+            </div>
+        </div>
 
-    </body>
-</html>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="./DSC_0015.JPG" alt="Wedding"><p>Wedding / Baby Event</p></div>
+                <div class="card-back"><h3>Custom Signage</h3><p>Beautifully crafted acrylic signs.</p><a href="#contact"><button>Enquire</button></a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="./image2.jpg" alt="Memorials"><p>Funeral Memorials</p></div>
+                <div class="card-back"><h3>Memorials</h3><p>Tributes to honor a beautiful life.</p><a href="#contact"><button>Enquire</button></a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="image3.jpg" alt="Portraits"><p>Digital Portraits</p></div>
+                <div class="card-back"><h3>Digital Art</h3><p>Unique hand-drawn memories.</p><a href="#contact"><button>Enquire</button></a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="image4.jpg" alt="Birthdays"><p>Birthday Decor</p></div>
+                <div class="card-back"><h3>Birthdays</h3><p>Signage for every milestone.</p><a href="#contact"><button>Enquire</button></a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front"><img src="image5.jpg" alt="Events"><p>Corporate Events</p></div>
+                <div class="card-back"><h3>Events</h3><p>Professional branding & signs.</p><a href="#contact"><button>Enquire</button></a></div>
+            </div>
+        </div>
+    </div>
+</section>
