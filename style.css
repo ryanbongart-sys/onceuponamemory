@@ -8,21 +8,50 @@ body {
 
 
 /* --- UPDATED HEADER CSS --- */
+/* --- UPDATED HEADER CSS TO FIX THE VISUAL ISSUES --- */
+
+/* 1. Header (Master Container) */
 header {
-    background-color: #10115d; /* A dark slate blue */
-    padding: 20px 0;
-    color: white;
+    background-color: #2c3e50; /* The dark slate blue color shown */
+    
+    /* CRITICAL: Remove all default padding to make the logo touch the edges */
+    padding: 0;
+    
+    /* CRITICAL: Must have a set height to determine the vertical space for centering */
+    height: 160px; /* Adjust this number to match the actual size of your header */
+    
+    /* Centers everything horizontally within this master bar */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically centers the logo within the header's height */
+    overflow: hidden; /* Important so nothing spills out of the edges */
 }
 
-/* 1. Header Container (Aligns 3 items side-by-side) */
+/* 2. Logo Container (Center Box) */
 .header-container {
+    height: 100%; /* Important: Must fill the height of the header */
     display: flex;
-    justify-content: space-between; /* Spreads items evenly */
-    align-items: center;          /* Vertically centers everything */
-    max-width: 2000px;            /* Boundary to prevent stretching on huge monitors */
-    margin: 0 auto;               /* Centers the container on the screen */
-    width: 100%;                  /* Takes full allowed width */
-    padding: 0 40px;              /* Side padding */
+    justify-content: center; /* Horizontally centers the logo *inside* this box */
+    align-items: center;    /* Vertically centers the logo *inside* this box */
+    
+    /* Make the container full width so we can center something within it */
+    width: 100%;
+}
+
+/* 3. The Logo (Image) styling */
+.logo {
+    /* CRITICAL: These two lines together make it fit the exact height */
+    height: 100%; /* Force the image to match the 160px header height */
+    width: auto; /* IMPORTANT: Maintain proper aspect ratio so it doesn't look stretched */
+    
+    /* IMPORTANT: Removes any default bottom whitespace the image might have */
+    display: block;
+    
+    /* Optional: If you want to keep that floating circular look from your image_4.png:
+    border-radius: 50%;
+    margin-top: 10px; /* Gives a tiny bit of space above/below */
+    margin-bottom: 10px;
+    */
 }
 
 /* 2. Spacer and Search Container (Must be equal width for true centering) */
@@ -50,13 +79,7 @@ header {
     align-items: center;
 }
 
-.logo {
-    max-width: 150px;           /* Size adjusted to fit header */
-    height: auto;
-    border-radius: 50%;
-    /* PLACEHOLDER LOGO */
-    content: url('https://placehold.co/150x150/ffffff/2c3e50?text=LOGO');
-}
+
 
 /* 4. Search Bar Modern Styling */
 .header-search form {
