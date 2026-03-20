@@ -1,4 +1,3 @@
-HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,26 +8,39 @@ HTML
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Animation Styles --- */
+        /* --- Continuous Loop Styles --- */
         
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-            justify-items: center;
+        .gallery {
+            overflow: hidden; /* Hide the cards that are off-screen */
+            padding: 60px 0;
+            background: #fdf8f5;
         }
 
-        /* The container that provides the 3D perspective */
+        .slider {
+            display: flex;
+            width: calc(300px * 10); /* Total width: card width * number of cards */
+            animation: scroll 30s linear infinite;
+        }
+
+        /* Pause animation on hover so users can interact with cards */
+        .slider:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 5)); } /* Scroll half the total width */
+        }
+
         .card {
-            background-color: transparent;
+            flex-shrink: 0;
             width: 300px;
             height: 400px;
             perspective: 1000px; 
-            border: none; /* Removing default border if any */
+            margin: 0 15px; /* Spacing between cards */
         }
 
-        /* This wrapper handles the actual rotation */
+        /* --- Existing Card Flip Logic --- */
         .card-inner {
             position: relative;
             width: 100%;
@@ -38,34 +50,22 @@ HTML
             transform-style: preserve-3d;
         }
 
-        /* Flip effect on hover */
         .card:hover .card-inner {
             transform: rotateY(180deg);
         }
 
-        /* Front and Back styling */
         .card-front, .card-back {
             position: absolute;
             width: 100%;
             height: 100%;
-            -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* Front Side */
-        .card-front {
-            background-color: #fff;
-        }
-
-        .card-front img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
+        .card-front { background-color: #fff; }
+        .card-front img { width: 100%; height: 100%; object-fit: cover; }
         .card-front p {
             position: absolute;
             bottom: 0;
@@ -75,11 +75,11 @@ HTML
             padding: 15px 0;
             font-family: 'Playfair Display', serif;
             font-weight: 600;
+            color: #333;
         }
 
-        /* Back Side */
         .card-back {
-            background-color: #fdf8f5; /* A soft cream color to match event vibes */
+            background-color: #fff;
             color: #2c3e50;
             transform: rotateY(180deg);
             display: flex;
@@ -87,27 +87,20 @@ HTML
             justify-content: center;
             align-items: center;
             padding: 20px;
-            border: 1px solid #eee;
         }
 
-        .card-back h3 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 10px;
-        }
-
+        .card-back h3 { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
         .card-back button {
-            background-color: #2c3e50;
+            background-color: #0A145A;
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
-            margin-top: 15px;
             cursor: pointer;
-            font-family: 'Lato', sans-serif;
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .card-inner { transition: none; }
+            .slider { animation: none; overflow-x: auto; }
         }
     </style>
 </head>
@@ -115,46 +108,35 @@ HTML
 
     <header>
         <div class="header-container">
-            <img src="./logo.jpg" alt="Once Upon a Memory Designs Logo" class="logo">
             <div class="header-text">
                 <h1>Once Upon a Memory Designs</h1>
                 <p>✨ Custom Event Signage & Personalised Decor<br>
-                🎉 Weddings | Birthdays | Events | Celebrations of Life<br>
-                📍 Geelong | Pickup & Delivery Available<br>
-                💌 Message us for Quotes & Inspiration</p>
+                📍 Geelong | Pickup & Delivery Available</p>
             </div>
         </div>
     </header>
 
     <section class="gallery">
-        <h2 style="text-align: center; font-family: 'Playfair Display'; margin-top: 40px;">Our Designs</h2>
-        <div class="grid">
-            
+        <h2 style="text-align: center; font-family: 'Playfair Display'; margin-bottom: 40px; color: #333;">Our Designs</h2>
+        
+        <div class="slider">
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="./DSC_0015.JPG" alt="Wedding / Baby Event Signage">
+                        <img src="./DSC_0015.JPG" alt="Wedding Signage">
                         <p>Wedding / Baby Event</p>
                     </div>
-                    <div class="card-back">
-                        <h3>Custom Signage</h3>
-                        <p>Beautifully crafted acrylic or timber signs for your special day.</p>
-                        <a href="#contact"><button>Enquire Now</button></a>
-                    </div>
+                    <div class="card-back"><h3>Custom Signage</h3><p>Beautifully crafted acrylic signs.</p><button>Enquire</button></div>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="./image2.jpg" alt="Funeral Custom Memorials">
+                        <img src="./image2.jpg" alt="Memorials">
                         <p>Funeral Custom Memorials</p>
                     </div>
-                    <div class="card-back">
-                        <h3>Memorials</h3>
-                        <p>Personalised tributes to honor and celebrate a beautiful life.</p>
-                        <a href="#contact"><button>Enquire Now</button></a>
-                    </div>
+                    <div class="card-back"><h3>Memorials</h3><p>Personalised tributes.</p><button>Enquire</button></div>
                 </div>
             </div>
 
@@ -164,37 +146,77 @@ HTML
                         <img src="image3.jpg" alt="Digital Portraits">
                         <p>Digital Portraits</p>
                     </div>
-                    <div class="card-back">
-                        <h3>Digital Art</h3>
-                        <p>Unique hand-drawn portraits turned into lasting memories.</p>
-                        <a href="#contact"><button>Enquire Now</button></a>
-                    </div>
+                    <div class="card-back"><h3>Digital Art</h3><p>Hand-drawn portraits.</p><button>Enquire</button></div>
                 </div>
             </div>
 
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="image4.jpg" alt="Birthday Signs">
+                        <p>Birthday Milestones</p>
+                    </div>
+                    <div class="card-back"><h3>Birthdays</h3><p>Make every age special.</p><button>Enquire</button></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="image5.jpg" alt="Seating Charts">
+                        <p>Seating Charts</p>
+                    </div>
+                    <div class="card-back"><h3>Event Planning</h3><p>Organize with style.</p><button>Enquire</button></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./DSC_0015.JPG" alt="Wedding Signage">
+                        <p>Wedding / Baby Event</p>
+                    </div>
+                    <div class="card-back"><h3>Custom Signage</h3><p>Beautifully crafted acrylic signs.</p><button>Enquire</button></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./image2.jpg" alt="Memorials">
+                        <p>Funeral Custom Memorials</p>
+                    </div>
+                    <div class="card-back"><h3>Memorials</h3><p>Personalised tributes.</p><button>Enquire</button></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="image3.jpg" alt="Digital Portraits">
+                        <p>Digital Portraits</p>
+                    </div>
+                    <div class="card-back"><h3>Digital Art</h3><p>Hand-drawn portraits.</p><button>Enquire</button></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="image4.jpg" alt="Birthday Signs">
+                        <p>Birthday Milestones</p>
+                    </div>
+                    <div class="card-back"><h3>Birthdays</h3><p>Make every age special.</p><button>Enquire</button></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="image5.jpg" alt="Seating Charts">
+                        <p>Seating Charts</p>
+                    </div>
+                    <div class="card-back"><h3>Event Planning</h3><p>Organize with style.</p><button>Enquire</button></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="enquiry" id="contact">
-        <h2>Request an Enquiry</h2>
-        <form action="https://api.staticforms.xyz/submit" method="POST">
-            <input type="hidden" name="accessKey" value="sf_e2b142b6a4a457e9d9709f3b">
-            <input type="text" name="honeypot" style="display:none">
-            
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Tell us about your event..." required></textarea>
-            
-            <input type="hidden" name="subject" value="New Website Enquiry">
-            <input type="hidden" name="redirectTo" value="https://onceuponamemory.com.au">
-            
-            <button type="submit">Send Request</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
-    </footer>
-
-</body>
+    </body>
 </html>
