@@ -8,7 +8,7 @@ body {
 
 
 header {
-    background-color: #1A365D; /* Dark navy blue from image */
+    background-color: #10115d; /* Dark navy blue from image */
     padding: 0;                /* CRITICAL: Removes space above/below */
     height: 300px;             /* Set the total height you want for the header */
     display: flex;
