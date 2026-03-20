@@ -114,9 +114,21 @@
 <body>
     <header>
     <div class="header-container">
-        <img src="./logo.jpg" alt="Once Upon a Memory Designs Logo" class="logo">
+        <div class="logo-container">
+            <img src="./logo.jpg" alt="Once Upon a Memory Designs Logo" class="logo">
+        </div>
+
+        <div class="header-search">
+            <form action="/search" method="GET">
+                <input type="text" name="q" placeholder="Search for designs..." class="search-input" aria-label="Search site">
+                
+                <button type="submit" class="search-button">
+                    Search
+                </button>
+            </form>
+        </div>
     </div>
-    </header>
+</header>
 
     <section class="gallery">
         <div class="header-text">
