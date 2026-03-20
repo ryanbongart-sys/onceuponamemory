@@ -10,7 +10,7 @@ body {
 header {
     background-color: #1A365D; /* Dark navy blue from image */
     padding: 0;                /* CRITICAL: Removes space above/below */
-    height: 160px;             /* Set the total height you want for the header */
+    height: 300px;             /* Set the total height you want for the header */
     display: flex;
     justify-content: center;   /* Horizontally centers the logo */
     align-items: center;       /* Vertically centers the logo */
