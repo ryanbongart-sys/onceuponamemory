@@ -12,13 +12,22 @@
     <style>
 
         /* --- Animation Styles --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-            justify-items: center;
-        }
+        .grid { 
+    display: grid; 
+    /* This forces 3 columns of equal width regardless of content */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    width: 100%;
+}
+
+/* Adjust the card image to handle the new smaller width */
+.card img { 
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 1 / 1; /* Makes all images perfectly square like your screenshot */
+    object-fit: cover;   /* Prevents images from stretching */
+    border-radius: 12px 12px 0 0; 
+}
 
         /* The container that provides the 3D perspective */
         .card {
