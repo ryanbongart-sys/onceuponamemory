@@ -351,11 +351,18 @@ input[type="file"]::file-selector-button:hover {
 }
 
 /* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
+/* Responsive adjustments */
+@media (max-width: 850px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
     }
+}
+
+@media (max-width: 550px) {
+    .grid {
+        grid-template-columns: 1fr; /* 1 per row on phones */
+    }
+}
     .logo {
         height: 250px;
         width: auto;
