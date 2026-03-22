@@ -218,7 +218,84 @@ h1 {
 }
 
 .card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+/* ========================================
+   TRUST FEATURES SECTION (Inspired by Ref)
+   ======================================== */
+.trust-features {
+    /* Background matches your existing header/footer navy blue */
+    background-color: #10115d;
+    color: white;
+    padding: 80px 20px; /* Spacious vertical padding like the ref */
+    text-align: center;
+}
 
+.features-container {
+    max-width: 1200px; /* Matches your header boundary */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.feature-item {
+    flex: 1; /* Each item takes equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the icon, title, and text */
+}
+
+.feature-icon {
+    font-size: 3rem; /* Large icon size */
+    /* Color matches your brand gold/tan hover color */
+    color: #bc936a; 
+    margin-bottom: 25px; /* Space between icon and title */
+}
+
+/* Optional: Slight "pop" on icon hover, like your social buttons */
+.feature-item:hover .feature-icon {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.feature-item h3 {
+    font-family: 'Playfair Display', serif; /* Uses your fancy heading font */
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.feature-item p {
+    font-family: 'Lato', sans-serif; /* Uses your body font */
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8); /* Slightly softer white for better readability */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========================================
+   RESPONSIVENESS (Crucial!)
+   ======================================== */
+/* On tablets, drop from 4 columns to 2x2 grid */
+@media (max-width: 992px) {
+    .features-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* On phones, drop to 1 column */
+@media (max-width: 600px) {
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+    .trust-features {
+        padding: 50px 20px;
+    }
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+}
 
 /* ENQUIRY SECTION */
 .enquiry { 
