@@ -13,21 +13,25 @@ header {
     color: white;
 }
 
-/* 1. Header Container (Aligns 3 items side-by-side) */
-.header-container {
-    display: flex;
-    justify-content: space-between; /* Spreads items evenly */
-    align-items: center;          /* Vertically centers everything */
-    max-width: 2000px;            /* Boundary to prevent stretching on huge monitors */
-    margin: 0 auto;               /* Centers the container on the screen */
-    width: 100%;                  /* Takes full allowed width */
-    padding: 0 40px; /* Adds 40px of space to the left and right sides */           /* Side padding */
-}
-/* Container for the left-side button */
+/* 1. The Left Container (Gallery Button) */
 .header-left {
-    flex: 1; /* Takes up 1/3 of the space to keep logo centered */
+    flex: 1;             /* Takes up 1/3 of the total width */
     display: flex;
-    justify-content: flex-start; /* Aligns button to the far left */
+    justify-content: flex-start; /* Keeps button on the far left */
+}
+
+/* 2. The Center Container (Logo) */
+.logo-container {
+    flex: 0 0 auto;      /* Only takes up exactly as much space as the logo needs */
+    display: flex;
+    justify-content: center;
+}
+
+/* 3. The Right Container (Search Bar) */
+.header-right {
+    flex: 1;             /* Takes up 1/3 of the total width (Matching the left!) */
+    display: flex;
+    justify-content: flex-end;   /* Pushes the search bar to the far right */
 }
 
 /* The Gallery Button Styling */
