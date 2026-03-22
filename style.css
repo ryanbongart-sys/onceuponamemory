@@ -195,6 +195,9 @@ h1 {
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px; 
+    /* ADD THESE */
+    justify-content: center; /* Centers the grid tracks */
+    align-items: start;      /* Ensures cards stay at the top of their row */
 }
 
 .card { 
