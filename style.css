@@ -350,22 +350,25 @@ input[type="file"]::file-selector-button:hover {
     color: #1877F2; /* Facebook Blue */
 }
 
-/* MOBILE RESPONSIVENESS */
-/* Responsive adjustments */
-@media (max-width: 850px) {
+/* TABLET VIEW (Under 1024px) */
+@media (max-width: 1024px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+        grid-template-columns: repeat(2, 1fr); /* Drops to 2 per row */
     }
 }
 
-@media (max-width: 550px) {
+/* PHONE VIEW (Under 768px) */
+@media (max-width: 768px) {
     .grid {
-        grid-template-columns: 1fr; /* 1 per row on phones */
+        grid-template-columns: 1fr !important; /* Forces 1 per row on phones */
     }
-}
+    
+    .gallery {
+        padding: 20px 15px; /* Shrinks white space on sides for mobile */
+    }
+
     .logo {
-        height: 250px;
-        width: auto;
+        max-width: 150px; /* Shrinks logo so it fits better on small screens */
     }
 }
 
