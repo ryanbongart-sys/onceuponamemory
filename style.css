@@ -228,6 +228,60 @@ footer {
     max-width: 1000px;
     margin: 0 auto;
 }
+/* --- FILE UPLOAD STYLING --- */
+.file-upload-wrapper {
+    margin-bottom: 20px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05); /* Very subtle contrast */
+    padding: 15px;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.upload-label {
+    display: block;
+    color: #FFF;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.upload-label i {
+    margin-right: 8px;
+    color: #bc936a; /* Using your hover gold color as an accent */
+}
+
+.file-input {
+    color: #ccc;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.file-help {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+/* Make the file input blend in better */
+input[type="file"]::file-selector-button {
+    background: #0A145A;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #bc936a;
+}
 
 .social-links {
     margin-top: 20px;
