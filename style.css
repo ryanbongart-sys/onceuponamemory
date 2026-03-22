@@ -177,7 +177,7 @@ h1 {
 
 /* GALLERY SECTION */
 .gallery { 
-    padding: 50px 20px; 
+    padding: 50px 25px; 
     max-width: 1200px; /* Increased from 1000px to accommodate 3 designs */
     margin: auto; 
     background-color: #FFF; 
@@ -199,7 +199,7 @@ h1 {
 
 .card { 
     border: 1px solid #eee; 
-    padding: 15px; 
+    padding: 25px; 
     text-align: center; 
     transition: 0.3s; 
 }
