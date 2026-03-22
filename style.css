@@ -194,7 +194,7 @@ h1 {
 .grid { 
     display: grid; 
     /* Change 250px to 200px or 180px */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
     gap: 20px; 
 }
 
