@@ -16,7 +16,7 @@ header {
 /* 1. Header Container (Aligns 3 items side-by-side) */
 .header-container {
     display: flex;
-    justify-content: space-between; /* Spreads items evenly */
+    /*justify-content: space-between; /* Spreads items evenly */
     align-items: center;          /* Vertically centers everything */
     max-width: 2000px;            /* Boundary to prevent stretching on huge monitors */
     margin: 0 auto;               /* Centers the container on the screen */
@@ -33,7 +33,7 @@ header {
 /* The Gallery Button Styling */
 .nav-btn {
     display: inline-block;
-    padding: 10px 40px;
+    padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent look */
     color: white;
     text-decoration: none;
