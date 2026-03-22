@@ -1,4 +1,8 @@
 /* GLOBAL STYLES */
+* {
+    box-sizing: border-box; /* The "magic fix" for centered layouts */
+}
+
 body { 
     font-family: 'Lato', sans-serif; 
     margin: 0; 
@@ -6,35 +10,45 @@ body {
     line-height: 1.6; 
 }
 
-
 /* --- UPDATED HEADER CSS --- */
 header {
-    background-color: #10115d; /* A dark slate blue */
+    background-color: #10115d; /* Dark slate blue */
     color: white;
+    width: 100%;
 }
 
 /* 1. Header Container (Aligns 3 items side-by-side) */
 .header-container {
     display: flex;
-    justify-content: space-between; /* Spreads items evenly */
-    align-items: center;          /* Vertically centers everything */
-    max-width: 2000px;            /* Boundary to prevent stretching on huge monitors */
-    margin: 0 auto;               /* Centers the container on the screen */
-    width: 100%;                  /* Takes full allowed width */
-    padding: 0 40px; /* Adds 40px of space to the left and right sides */           /* Side padding */
+    justify-content: space-between; 
+    align-items: center;          
+    max-width: 2000px;            
+    margin: 0 auto;               
+    width: 100%;                  
+    padding: 15px 40px; /* Consistent padding for left/right balance */
 }
-/* Container for the left-side button */
-.header-left {
-    flex: 1; /* Takes up 1/3 of the space to keep logo centered */
+
+/* These two zones MUST be equal (flex: 1) to keep the logo dead-center */
+.header-left, 
+.header-search {
+    flex: 1;
     display: flex;
-    justify-content: flex-start; /* Aligns button to the far left */
+    align-items: center;
+}
+
+.header-left {
+    justify-content: flex-start; /* Pushes Gallery button to the far left */
+}
+
+.header-search {
+    justify-content: flex-end; /* Pushes Search Bar to the far right */
 }
 
 /* The Gallery Button Styling */
 .nav-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent look */
+    background-color: rgba(255, 255, 255, 0.1); 
     color: white;
     text-decoration: none;
     font-family: 'Lato', sans-serif;
@@ -47,45 +61,28 @@ header {
 }
 
 .nav-btn:hover {
-    background-color: #bc936a; /* Matches your brand's gold/tan hover color */
+    background-color: #bc936a; 
     border-color: #bc936a;
     color: white;
 }
 
-/* 2. Spacer and Search Container (Must be equal width for true centering) */
-.header-spacer, .header-search {
-    flex: 1;                     /* Both take up exactly 1/3 of the space */
-    display: flex;
-    align-items: center;
-}
-
-/* Spacer on the left remains empty */
-.header-spacer {
-    justify-content: flex-start;
-}
-
-/* Search bar on the right is aligned right */
-.header-search {
-    justify-content: flex-end; /* Aligns search bar to the right edge */
-}
-
-/* 3. Logo Container (Centers itself in the middle 1/3) */
+/* 3. Logo Container (The middle anchor) */
 .logo-container {
-    flex: 0 0 auto;             /* Logo doesn't shrink or grow; takes only needed space */
+    flex: 0 0 auto; 
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
 }
 
 .logo-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none; /* Removes any default link underlining */
-    transition: opacity 0.3s ease; /* Adds a smooth feel when hovering */
+    text-decoration: none; 
+    transition: opacity 0.3s ease; 
 }
 
-/* Subtle feedback when someone hovers over the logo */
 .logo-link:hover {
     opacity: 0.8; 
     cursor: pointer;
@@ -95,31 +92,32 @@ header {
     max-width: 250px;
     height: auto;
     border-radius: 50%;
-    display: block; /* Removes bottom gap inside the link */
+    display: block; 
 }
+
 /* 4. Search Bar Modern Styling */
 .header-search form {
     display: flex;
-    gap: 0;                     /* No gap for a cohesive pill shape */
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle transparent white border */
-    border-radius: 25px;        /* Rounded edges */
-    overflow: hidden;           /* Clips contents to shape */
-    background-color: rgba(255, 255, 255, 0.1); /* Slight white background hint */
+    gap: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    border-radius: 25px;        
+    overflow: hidden;           
+    background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .search-input {
     background-color: transparent;
     border: none;
-    color: white;               /* White text input */
-    padding: 5px 20px;
+    color: white;               
+    padding: 10px 20px;
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
-    width: 250px;               /* Text input width */
+    width: 250px;               
     outline: none;
 }
 
 .search-input::placeholder {
-    color: rgba(255, 255, 255, 0.6); /* Softened placeholder text */
+    color: rgba(255, 255, 255, 0.6); 
 }
 
 .search-button {
@@ -128,7 +126,7 @@ header {
     color: white;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
-    text-transform: uppercase;  /* All-caps button text */
+    text-transform: uppercase;  
     font-size: 0.8rem;
     letter-spacing: 1px;
     font-weight: 700;
@@ -137,30 +135,10 @@ header {
 }
 
 .search-button:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Hover highlight */
+    background-color: rgba(255, 255, 255, 0.2); 
 }
 
-/* RESPONSIVENESS (Stacks items on mobile) */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column; /* Stack vertically */
-        gap: 20px;
-        padding: 0 20px;
-    }
-    
-    .header-spacer {
-        display: none;          /* Hide the spacer on mobile */
-    }
-
-    .header-search {
-        width: 100%;            /* Search bar spans full width */
-        justify-content: center; /* Centered search on mobile */
-    }
-
-    .search-input {
-        width: 100%;            /* Input area spans full width */
-    }
-}
+/* HEADER TEXT & TITLES */
 .header-text {
     padding: 40px;
     flex-grow: 1;
@@ -219,21 +197,21 @@ h1 {
 
 .enquiry h2 { color: #FFF; font-family: 'Playfair Display', serif; }
 
-form { 
+.enquiry-form { 
     max-width: 500px; 
     margin: auto; 
     display: flex; 
     flex-direction: column; 
 }
 
-input, textarea { 
+.enquiry-form input, .enquiry-form textarea { 
     margin-bottom: 15px; 
     padding: 12px; 
     border: none; 
     border-radius: 4px; 
 }
 
-button { 
+.enquiry-form button { 
     background: #0A145A; 
     color: white; 
     border: none; 
@@ -243,24 +221,13 @@ button {
     border-radius: 4px; 
 }
 
-button:hover { background: #bc936a; }
+.enquiry-form button:hover { background: #bc936a; }
 
-footer {
-    background-color: #10115d; /* Matches your header */
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-/* --- FILE UPLOAD STYLING --- */
+/* FILE UPLOAD STYLING */
 .file-upload-wrapper {
     margin-bottom: 20px;
     text-align: left;
-    background: rgba(255, 255, 255, 0.05); /* Very subtle contrast */
+    background: rgba(255, 255, 255, 0.05); 
     padding: 15px;
     border: 1px dashed rgba(255, 255, 255, 0.3);
     border-radius: 4px;
@@ -277,7 +244,7 @@ footer {
 
 .upload-label i {
     margin-right: 8px;
-    color: #bc936a; /* Using your hover gold color as an accent */
+    color: #bc936a; 
 }
 
 .file-input {
@@ -294,7 +261,6 @@ footer {
     font-style: italic;
 }
 
-/* Make the file input blend in better */
 input[type="file"]::file-selector-button {
     background: #0A145A;
     color: white;
@@ -311,11 +277,19 @@ input[type="file"]::file-selector-button:hover {
     background: #bc936a;
 }
 
+/* FOOTER & SOCIALS */
+footer {
+    background-color: #10115d;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
 .social-links {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Space between buttons */
+    gap: 15px;
 }
 
 .social-btn {
@@ -325,7 +299,7 @@ input[type="file"]::file-selector-button:hover {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent circle */
+    background-color: rgba(255, 255, 255, 0.1); 
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
@@ -333,29 +307,33 @@ input[type="file"]::file-selector-button:hover {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Hover Effects */
 .social-btn:hover {
-    transform: translateY(-3px); /* Lifts the button slightly */
+    transform: translateY(-3px);
     background-color: white;
 }
 
-.social-btn.instagram:hover {
-    color: #E1306C; /* Instagram Pink */
-}
+.social-btn.instagram:hover { color: #E1306C; }
+.social-btn.facebook:hover { color: #1877F2; }
 
-.social-btn.facebook:hover {
-    color: #1877F2; /* Facebook Blue */
-}
-
-/* MOBILE RESPONSIVENESS */
+/* RESPONSIVENESS */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
+        flex-direction: column; 
+        gap: 20px;
+        padding: 20px;
         text-align: center;
     }
+    
+    .header-left, .header-search {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
     .logo {
-        height: 250px;
-        width: auto;
+        max-width: 180px;
     }
 }
-
