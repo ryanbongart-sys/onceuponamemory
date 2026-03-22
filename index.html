@@ -1,158 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Once Upon a Memory Designs | Home</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Once Upon a Memory Designs | Custom Event Signage</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="p:domain_verify" content="e4e3352d1fe1b08e1a8dcbfb757ea3fe"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* GLOBAL STYLES */
-        * { box-sizing: border-box; }
-        body { font-family: 'Lato', sans-serif; margin: 0; color: #333; line-height: 1.6; background-color: #f9f9f9; }
 
-        /* --- HEADER --- */
-        header { background-color: #10115d; color: white; width: 100%; padding: 20px 0; }
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 2000px;
-            margin: 0 auto;
-            padding: 0 40px;
+        /* --- Animation Styles --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            justify-items: center;
         }
-        .header-left, .header-right { flex: 1; display: flex; align-items: center; }
-        .header-left { justify-content: flex-start; }
-        .header-right { justify-content: flex-end; }
-        
-        .logo-container { flex: 0 0 auto; padding: 0 20px; }
-        .logo { max-width: 180px; height: auto; border-radius: 50%; transition: opacity 0.3s; }
-        .logo:hover { opacity: 0.8; }
 
-        /* BUTTONS & SEARCH */
-        .nav-btn {
-            padding: 10px 20px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.4);
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
+        /* The container that provides the 3D perspective */
+        .card {
+            background-color: transparent;
+            width: 300px;
+            height: 400px;
+            perspective: 1000px; 
+            border: none; /* Removing default border if any */
         }
-        .nav-btn:hover { background: #bc936a; border-color: #bc936a; }
 
-        .header-search form {
-            display: flex;
-            border: 1px solid rgba(255,255,255,0.4);
-            border-radius: 25px;
+        /* This wrapper handles the actual rotation */
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        /* Flip effect on hover */
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and Back styling */
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 15px;
             overflow: hidden;
-            background: rgba(255,255,255,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .search-input { background: transparent; border: none; color: white; padding: 10px 15px; width: 180px; outline: none; }
-        .search-button { background: transparent; border: none; color: white; padding: 0 20px; cursor: pointer; font-weight: 700; transition: 0.3s; }
-        .search-button:hover { background: rgba(255,255,255,0.2); }
 
-        /* GALLERY PREVIEW */
-        .gallery { padding: 80px 20px; max-width: 1100px; margin: auto; }
-        .gallery h2 { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 15px; border: 1px solid #eee; transition: 0.3s; text-align: center; }
-        .card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .card img { width: 100%; height: auto; border-radius: 2px; }
-
-        /* ENQUIRY FORM */
-        .enquiry { background: #222; color: white; padding: 80px 20px; text-align: center; }
-        .enquiry h2 { font-family: 'Playfair Display', serif; margin-bottom: 30px; }
-        .enquiry-form { max-width: 600px; margin: auto; display: flex; flex-direction: column; }
-        .enquiry-form input, .enquiry-form textarea { margin-bottom: 15px; padding: 15px; border-radius: 4px; border: none; }
-        
-        .file-upload-wrapper { 
-            background: rgba(255,255,255,0.05); 
-            padding: 20px; 
-            border: 1px dashed rgba(255,255,255,0.3); 
-            margin-bottom: 15px; 
-            text-align: left; 
+        /* Front Side */
+        .card-front {
+            background-color: #fff;
         }
-        .upload-label { display: block; margin-bottom: 10px; font-size: 0.9rem; color: #bc936a; }
-        .submit-btn { background: #10115d; color: white; padding: 18px; border: none; cursor: pointer; font-weight: 700; font-size: 1rem; border-radius: 4px; transition: 0.3s; }
-        .submit-btn:hover { background: #bc936a; }
+     
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-        /* FOOTER */
-        footer { background: #10115d; color: white; padding: 50px 20px; text-align: center; }
-        .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
-        .social-btn { width: 45px; height: 45px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
-        .social-btn:hover { background: white; color: #10115d; transform: translateY(-3px); }
+        .card-front p {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            padding: 15px 0;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
 
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 15px; }
-            .header-left, .header-right { justify-content: center; width: 100%; }
+        /* Back Side */
+        .card-back {
+            background-color: #fdf8f5; /* A soft cream color to match event vibes */
+            color: #2c3e50;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #eee;
+        }
+
+        .card-back h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        .card-back button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card-inner { transition: none; }
         }
     </style>
+
 </head>
 <body>
-
-<header>
-    <div class="header-container">
+    <header>
+        <div class="header-container">
         <div class="header-left">
             <a href="gallery.html" class="nav-btn">View Gallery</a>
         </div>
+    
+
         <div class="logo-container">
-            <a href="index.html"><img src="./logo.jpg" alt="Once Upon a Memory Designs" class="logo"></a>
-        </div>
-        <div class="header-right">
-            <div class="header-search">
-                <form onsubmit="event.preventDefault();">
-                    <input type="text" placeholder="Search..." class="search-input">
-                    <button type="button" class="search-button">SEARCH</button>
-                </form>
-            </div>
+    <a href="index.html" class="logo-link">
+        <img src="./logo.jpg" alt="Once Upon a Memory Designs Logo" class="logo">
+    </a>
+</div>
+
+        <div class="header-search">
+            <form action="https://au.pinterest.com/onceuponamemorydesigns/" method="GET">
+                <input type="text" name="q" placeholder="Search for designs..." class="search-input" aria-label="Search site">
+                <button type="submit" class="search-button">
+                    Search
+                </button>
+            </form>
         </div>
     </div>
 </header>
 
-<section class="gallery">
-    <h2>Our Latest Designs</h2>
-    <div class="grid">
-        <div class="card" data-category="wedding gold">
-            <img src="./design1.jpg" alt="Wedding Invitation">
-            <h3>Gold Floral Wedding</h3>
-        </div>
-        <div class="card" data-category="baby shower blue">
-            <img src="./design2.jpg" alt="Baby Shower">
-            <h3>Baby Shower Suite</h3>
-        </div>
-    </div>
-</section>
+    <section class="gallery">
+        <div class="header-text">
+                <h1>Custom Event Signage & Personalised Decor </h1>
+                <p> 💌 Message us for Quotes & Inspiration</p>
+            </div>
+        <div class="grid">
+                
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./image5.jpg" alt="Custom Wedding Signage">
+                        <p>Custom Wedding Signage</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Custom Wedding Signage</h3>
+                        <p>Beautifully crafted acrylic, fabric or timber signs for your special day.</p>
+                        <a href="#contact"><button>Enquire Now</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./image2.jpg" alt="Custom Memorials of Life">
+                        <p>Custom Memorials of Life</p>
 
-<section class="enquiry">
-    <h2>Custom Enquiries</h2>
-    <form class="enquiry-form" action="https://formspree.io/f/your-id" method="POST" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="card-back">
+                        <h3>Custom Memorials of Life</h3>
+                        <p>Personalised tributes to honor and celebrate a beautiful life.</p>
+                        <a href="#contact"><button>Enquire Now</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./image4.jpg" alt="Baby Event Signage">
+                        <p>Baby Event Signage</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Baby Event Signage</h3>
+                        <p>Introduce, celebrate or announce your baby with a custom Once Upon A Memory Design.</p>
+                        <a href="#contact"><button>Enquire Now</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./image13.jpg" alt="Personalised Birthday Signage">
+                        <p>Personalised Birthday Signage</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Personalised Birthday Signage</h3>
+                        <p>Celebrate another year of your loved one with our birthday range.</p>
+                        <a href="#contact"><button>Enquire Now</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./image7.jpg" alt="Special Events & Holidays">
+                        <p>Special Events & Holidays</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Special Events & Holidays</h3>
+                        <p>Smaller events like Christmas and Easter won't be missed. We design to ensure all events have a sweet touch of Once Upon A Memory Designs. </p>
+                        <a href="#contact"><button>Enquire Now</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="image3.jpg" alt="Signage Equipment Hire / Delivery">
+
+                        <p>Signage Equipment Hire / Delivery</p>
+
+                    </div>
+                    <div class="card-back">
+                        <h3>Signage Equipment Hire / Delivery</h3>
+                        <p>Signage doesn't always have to be a keepsake, hire and return the equipment. Delivery options available. </p>
+                        <a href="#contact"><button>Enquire Now</button></a>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="enquiry" id="contact">
+        <h2>Request an Enquiry</h2>
+        <form action="https://formspree.io/f/mgonbrgy" method="POST" enctype="multipart/form-data">
+            
+            
+
+            <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    
+
+    <textarea name="message" placeholder="Tell us about your event and design... "></textarea>
+    
+    <button type="submit">Send Enquiry</button>
+</form>
+    </section>
+
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
         
-        <div class="file-upload-wrapper">
-            <label class="upload-label"><i class="fa-solid fa-image"></i> Upload Design Inspiration</label>
-            <input type="file" name="attachment" accept="image/*" multiple>
+        <div class="social-links">
+            <a href="https://www.instagram.com/onceuponamemorydesigns" target="_blank" class="social-btn instagram" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <a href="https://www.facebook.com/people/Once-Upon-A-Memory-Designs/61577818255636/" target="_blank" class="social-btn facebook" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
         </div>
-
-        <textarea name="message" rows="5" placeholder="Tell us about your event details..."></textarea>
-        <button type="submit" class="submit-btn">SEND REQUEST</button>
-    </form>
-</section>
-
-<footer>
-    <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
-    <div class="social-links">
-        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
     </div>
 </footer>
 
 </body>
+
 </html>
+
