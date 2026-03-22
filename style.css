@@ -368,7 +368,7 @@ input[type="file"]::file-selector-button:hover {
     }
 
     .logo {
-        max-width: 150px; /* Shrinks logo so it fits better on small screens */
+        max-width: 250px; /* Shrinks logo so it fits better on small screens */
     }
 }
 
