@@ -180,7 +180,7 @@ h1 {
     padding: 50px 10px; 
     max-width: 2000px; /* Match your header's max-width */
     margin: 0 auto;    /* This is the magic that centers the whole block */
-    width: 90%;        /* Gives a little breathing room on the sides */
+    width: 75%;        /* Gives a little breathing room on the sides */
 }
 
 .gallery h2 { 
