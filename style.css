@@ -177,10 +177,10 @@ h1 {
 
 /* GALLERY SECTION */
 .gallery { 
-    padding: 50px 25px; 
-    max-width: 1200px; /* Increased from 1000px to accommodate 3 designs */
-    margin: auto; 
-    background-color: #FFF; 
+    padding: 50px 20px; 
+    max-width: 2000px; /* Match your header's max-width */
+    margin: 0 auto;    /* This is the magic that centers the whole block */
+    width: 90%;        /* Gives a little breathing room on the sides */
 }
 
 .gallery h2 { 
@@ -194,26 +194,31 @@ h1 {
 .grid { 
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    /* ADD THESE */
-    justify-content: center; /* Centers the grid tracks */
-    align-items: start;      /* Ensures cards stay at the top of their row */
+    gap: 30px; /* Increased gap for a more premium, spaced-out look */
+    justify-content: center; 
+    margin: 0 auto;
+    max-width: 1200px; /* Keeps the cards from getting too giant on wide screens */
 }
 
-.card { 
-    border: 1px solid #eee; 
-    padding: 25px; 
-    text-align: center; 
-    transition: 0.3s; 
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the image and text horizontally */
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    max-width: 350px; /* Keeps images consistent */
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto; /* Centers the image in the card */
 }
 
 .card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-.card img { 
-    width: 100%; 
-    height: auto; 
-    border-radius: 4px; 
-}
 
 /* ENQUIRY SECTION */
 .enquiry { 
