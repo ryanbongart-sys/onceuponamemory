@@ -33,32 +33,33 @@ header {
     align-items: center;
     min-width: 0;       /* Prevents content from stretching the container */
 }
-/* This ensures the left side doesn't collapse on itself */
+
+/* This is the master container for the left side */
 .header-left {
-    flex: 1; 
-    display: flex;
+    flex: 1;                /* Makes this side equal to the search side */
+    display: flex;          /* This is critical: tells buttons to sit side-by-side */
+    flex-direction: row;    /* Forces horizontal alignment */
     justify-content: flex-start;
     align-items: center;
-    gap: 15px;      /* This creates the vital space between About Us and Gallery */
-    min-width: 0;   /* Allows flexbox to calculate space correctly */
+    gap: 15px;              /* Pushes buttons apart so they don't touch */
 }
 
-/* The Gallery Button Styling */
+/* This fixes the button shape and size */
 .nav-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap; /* Prevents "About Us" from splitting into two lines */
-    min-width: 120px;    /* Makes both buttons the same size */
-    height: 40px;        /* Consistent height */
-    padding: 0 15px;
     
-    /* Your colors/borders */
+    width: 120px;           /* Forces buttons to be identical in size */
+    height: 40px;           /* Forces buttons to be identical in height */
+    
     background-color: #bc936a; 
     color: white;
     text-decoration: none;
-    border-radius: 20px; /* Pill shape */
+    border-radius: 20px;    /* Makes them the pill shape you want */
     font-size: 0.9rem;
+    white-space: nowrap;    /* Keeps text on one line */
+    box-sizing: border-box; /* Ensures padding doesn't break the size */
 }
 
 .nav-btn:hover {
