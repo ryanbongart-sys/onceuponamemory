@@ -398,6 +398,28 @@ input[type="file"]::file-selector-button {
 input[type="file"]::file-selector-button:hover {
     background: #bc936a;
 }
+/* Styling the input boxes and message area */
+.enquiry input, 
+.enquiry textarea {
+    width: 100%;             /* Ensures they fill the form width */
+    padding: 12px 15px;      /* Space inside the box for the text */
+    margin-bottom: 20px;     /* Space between the boxes */
+    border: 1px solid #ccc;  /* This creates the "box" outline */
+    border-radius: 5px;      /* Slightly rounds the corners */
+    background-color: #fff;  /* Keeps the inside white */
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;  /* Prevents the boxes from overflowing */
+    transition: border-color 0.3s ease; /* Smooth transition for the glow */
+}
+
+/* Optional: Add a "glow" when a user clicks into a box */
+.enquiry input:focus, 
+.enquiry textarea:focus {
+    outline: none;
+    border-color: #10115d;   /* Changes border to your brand navy when active */
+    box-shadow: 0 0 5px rgba(16, 17, 93, 0.2);
+}
 
 .social-links {
     margin-top: 20px;
