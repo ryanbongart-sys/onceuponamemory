@@ -33,7 +33,6 @@ header {
     align-items: center;
     min-width: 0;       /* Prevents content from stretching the container */
 }
-/* Container for the left-side button */
 /* This ensures the left side doesn't collapse on itself */
 .header-left {
     flex: 1; 
