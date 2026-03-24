@@ -34,27 +34,32 @@ header {
     min-width: 0;       /* Prevents content from stretching the container */
 }
 /* Container for the left-side button */
+/* This ensures the left side doesn't collapse on itself */
 .header-left {
+    flex: 1; 
+    display: flex;
     justify-content: flex-start;
-    gap: 15px;          /* Adds consistent space between 'About Us' and 'Gallery' */
+    align-items: center;
+    gap: 15px;      /* This creates the vital space between About Us and Gallery */
+    min-width: 0;   /* Allows flexbox to calculate space correctly */
 }
 
 /* The Gallery Button Styling */
 .nav-btn {
-    display: flex;           /* Required to center text inside */
-    align-items: center;     /* Centers text vertically */
-    justify-content: center; /* Centers text horizontally */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Prevents "About Us" from splitting into two lines */
+    min-width: 120px;    /* Makes both buttons the same size */
+    height: 40px;        /* Consistent height */
+    padding: 0 15px;
     
-    width: 150px;            /* Matches your .search-input width */
-    height: 45px;            /* Fixed height for a button look */
-    
-    /* Keep your existing styling below */
-    padding: 0;              /* Remove old padding to prevent stretching */
-    background-color: rgba(255, 255, 255, 0.1);
+    /* Your colors/borders */
+    background-color: #bc936a; 
     color: white;
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 25px;     /* Changed to 25px to match the search bar pill shape */
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.9rem;
 }
 
 .nav-btn:hover {
