@@ -35,9 +35,34 @@ header {
     min-width: 0; 
 }
 
+/* This is the container for BOTH buttons */
 .header-left {
+    flex: 1;                /* Occupies exactly 1/3 of the header */
+    display: flex !important; /* Forces the buttons to sit side-by-side */
+    flex-direction: row;    /* Horizontal layout */
     justify-content: flex-start;
-    gap: 15px; /* Creates the gap between 'About Us' and 'Gallery' */
+    align-items: center;
+    gap: 15px;              /* Creates the space between the two buttons */
+}
+
+/* The Button Styling */
+.nav-btn {
+    display: flex;          /* Centers text inside the button */
+    align-items: center;
+    justify-content: center;
+    
+    width: 120px;           /* Exact same width for both */
+    height: 40px;           /* Exact same height for both */
+    
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;    /* Pill shape */
+    
+    font-size: 0.85rem;
+    white-space: nowrap;    /* Prevents "About Us" from splitting lines */
+    box-sizing: border-box; /* Includes border in the 120px width */
 }
 
 .header-search {
@@ -49,23 +74,6 @@ header {
     flex: 0 0 auto; 
     padding: 0 30px;
     text-align: center;
-}
-
-/* BUTTONS: Matching sizes */
-.nav-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;        /* Fixed width so buttons match */
-    height: 42px;        /* Fixed height */
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 25px; /* Pill shape */
-    font-size: 0.85rem;
-    white-space: nowrap;
-    transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
