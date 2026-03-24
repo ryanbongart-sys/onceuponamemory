@@ -1,0 +1,480 @@
+* {
+    box-sizing: border-box;
+}
+/* GLOBAL STYLES */
+body { 
+    font-family: 'Lato', sans-serif; 
+    margin: 0; 
+    color: #333; 
+    line-height: 1.6; 
+}
+
+
+/* --- UPDATED HEADER CSS --- */
+header {
+    background-color: #10115d; /* A dark slate blue */
+    color: white;
+}
+
+/* 1. Header Container (Aligns 3 items side-by-side) */
+.header-container {
+    display: flex;
+    /*justify-content: space-between; /* Spreads items evenly */
+    align-items: center;          /* Vertically centers everything */
+    max-width: 2000px;            /* Boundary to prevent stretching on huge monitors */
+    margin: 0 auto;               /* Centers the container on the screen */
+    width: 100%;                  /* Takes full allowed width */
+    padding: 0 40px; /* Adds 40px of space to the left and right sides */           /* Side padding */
+}
+/* Container for the left-side button */
+.header-left {
+    flex: 1; /* Takes up 1/3 of the space to keep logo centered */
+    display: flex;
+    justify-content: flex-start; /* Aligns button to the far left */
+}
+
+/* The Gallery Button Styling */
+.nav-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent look */
+    color: white;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #bc936a; /* Matches your brand's gold/tan hover color */
+    border-color: #bc936a;
+    color: white;
+}
+
+/* 2. Spacer and Search Container (Must be equal width for true centering) */
+.header-spacer, .header-search {
+    flex: 1;                     /* Both take up exactly 1/3 of the space */
+    display: flex;
+    align-items: center;
+}
+
+/* Spacer on the left remains empty */
+.header-spacer {
+    justify-content: flex-start;
+}
+
+/* Search bar on the right is aligned right */
+.header-search {
+    justify-content: flex-end; /* Aligns search bar to the right edge */
+}
+
+/* 3. Logo Container (Centers itself in the middle 1/3) */
+.logo-container {
+    flex: 0 0 auto;             /* Logo doesn't shrink or grow; takes only needed space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Removes any default link underlining */
+    transition: opacity 0.3s ease; /* Adds a smooth feel when hovering */
+}
+
+/* Subtle feedback when someone hovers over the logo */
+.logo-link:hover {
+    opacity: 0.8; 
+    cursor: pointer;
+}
+
+.logo {
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+    display: block; /* Removes bottom gap inside the link */
+}
+/* 4. Search Bar Modern Styling */
+.header-search form {
+    display: flex;
+    gap: 0;                     /* No gap for a cohesive pill shape */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle transparent white border */
+    border-radius: 25px;        /* Rounded edges */
+    overflow: hidden;           /* Clips contents to shape */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white background hint */
+}
+
+.search-input {
+    background-color: transparent;
+    border: none;
+    color: white;               /* White text input */
+    padding: 5px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    width: 250px;               /* Text input width */
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Softened placeholder text */
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;  /* All-caps button text */
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover highlight */
+}
+
+/* RESPONSIVENESS (Stacks items on mobile) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Stack vertically */
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .header-spacer {
+        display: none;          /* Hide the spacer on mobile */
+    }
+
+    .header-search {
+        width: 100%;            /* Search bar spans full width */
+        justify-content: center; /* Centered search on mobile */
+    }
+
+    .search-input {
+        width: 100%;            /* Input area spans full width */
+    }
+}
+.header-text {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.5rem; 
+    margin: 0 0 10px 0; 
+}
+
+/* GALLERY SECTION */
+.gallery { 
+    padding: 50px 10px; 
+    max-width: 2000px; /* Match your header's max-width */
+    margin: 0 auto;    /* This is the magic that centers the whole block */
+    width: 75%;        /* Gives a little breathing room on the sides */
+}
+
+.gallery h2 { 
+    text-align: center; 
+    font-family: 'Playfair Display', serif; 
+    color: #333; 
+    margin-bottom: 30px;
+}
+
+/* GRID & CARDS */
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Increased gap for a more premium, spaced-out look */
+    justify-content: center; 
+    margin: 0 auto;
+    max-width: 1200px; /* Keeps the cards from getting too giant on wide screens */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the image and text horizontally */
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    max-width: 350px; /* Keeps images consistent */
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto; /* Centers the image in the card */
+}
+
+.card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+/* ========================================
+   TRUST FEATURES SECTION (Inspired by Ref)
+   ======================================== */
+.trust-features {
+    /* Background matches your existing header/footer navy blue */
+    background-color: #10115d;
+    color: white;
+    padding: 80px 20px; /* Spacious vertical padding like the ref */
+    text-align: center;
+}
+
+.features-container {
+    max-width: 1200px; /* Matches your header boundary */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.feature-item {
+    flex: 1; /* Each item takes equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the icon, title, and text */
+}
+
+.feature-icon {
+    font-size: 3rem; /* Large icon size */
+    /* Color matches your brand gold/tan hover color */
+    color: #FFFF00; 
+    margin-bottom: 25px; /* Space between icon and title */
+}
+
+/* Optional: Slight "pop" on icon hover, like your social buttons */
+.feature-item:hover .feature-icon {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.feature-item h3 {
+    font-family: 'Playfair Display', serif; /* Uses your fancy heading font */
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.feature-item p {
+    font-family: 'Lato', sans-serif; /* Uses your body font */
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8); /* Slightly softer white for better readability */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========================================
+   RESPONSIVENESS (Crucial!)
+   ======================================== */
+/* On tablets, drop from 4 columns to 2x2 grid */
+@media (max-width: 992px) {
+    .features-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* On phones, drop to 1 column */
+@media (max-width: 600px) {
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+    .trust-features {
+        padding: 50px 20px;
+    }
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* ENQUIRY SECTION */
+.enquiry { 
+    background: #FFF; 
+    color: black; 
+    padding: 50px 20px; 
+    text-align: center; 
+}
+
+.enquiry h2 { color: #000; font-family: 'Playfair Display', serif; }
+
+form { 
+    max-width: 500px; 
+    margin: auto; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+input, textarea { 
+    margin-bottom: 15px; 
+    padding: 12px; 
+    border: none; 
+    border-radius: 4px; 
+}
+
+button { 
+    background: #0A145A; 
+    color: white; 
+    border: none; 
+    padding: 15px; 
+    cursor: pointer; 
+    font-size: 1rem; 
+    border-radius: 4px; 
+}
+
+button:hover { background: #bc936a; }
+
+footer {
+    background-color: #10115d; /* Matches your header */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* --- FILE UPLOAD STYLING --- */
+.file-upload-wrapper {
+    margin-bottom: 20px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05); /* Very subtle contrast */
+    padding: 15px;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.upload-label {
+    display: block;
+    color: #FFF;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.upload-label i {
+    margin-right: 8px;
+    color: #bc936a; /* Using your hover gold color as an accent */
+}
+
+.file-input {
+    color: #ccc;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.file-help {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+/* Make the file input blend in better */
+input[type="file"]::file-selector-button {
+    background: #0A145A;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #bc936a;
+}
+/* Styling the input boxes and message area */
+.enquiry input, 
+.enquiry textarea {
+    width: 100%;             /* Ensures they fill the form width */
+    padding: 12px 15px;      /* Space inside the box for the text */
+    margin-bottom: 20px;     /* Space between the boxes */
+    border: 1px solid #ccc;  /* This creates the "box" outline */
+    border-radius: 5px;      /* Slightly rounds the corners */
+    background-color: #fff;  /* Keeps the inside white */
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;  /* Prevents the boxes from overflowing */
+    transition: border-color 0.3s ease; /* Smooth transition for the glow */
+}
+
+/* Optional: Add a "glow" when a user clicks into a box */
+.enquiry input:focus, 
+.enquiry textarea:focus {
+    outline: none;
+    border-color: #10115d;   /* Changes border to your brand navy when active */
+    box-shadow: 0 0 5px rgba(16, 17, 93, 0.2);
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent circle */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effects */
+.social-btn:hover {
+    transform: translateY(-3px); /* Lifts the button slightly */
+    background-color: white;
+}
+
+.social-btn.instagram:hover {
+    color: #E1306C; /* Instagram Pink */
+}
+
+.social-btn.facebook:hover {
+    color: #1877F2; /* Facebook Blue */
+}
+
+/* TABLET VIEW (Under 1024px) */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Drops to 2 per row */
+    }
+}
+
+/* PHONE VIEW (Under 768px) */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr !important; /* Forces 1 per row on phones */
+    }
+    
+    .gallery {
+        padding: 20px 15px; /* Shrinks white space on sides for mobile */
+    }
+
+    .logo {
+        max-width: 250px; /* Shrinks logo so it fits better on small screens */
+    }
+}
