@@ -51,7 +51,7 @@ header {
     align-items: center;
     justify-content: center;
     
-    width: 120px;           /* Exact same width for both */
+    width: 160px;           /* Exact same width for both */
     height: 40px;           /* Exact same height for both */
     
     background-color: rgba(255, 255, 255, 0.1); 
@@ -60,7 +60,7 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 20px;    /* Pill shape */
     
-    font-size: 0.85rem;
+    font-size: 1rem;
     white-space: nowrap;    /* Prevents "About Us" from splitting lines */
     box-sizing: border-box; /* Includes border in the 120px width */
 }
