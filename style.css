@@ -10,64 +10,68 @@ body {
 }
 
 
-/* --- UPDATED HEADER CSS --- */
+/* --- CLEANED & FIXED HEADER --- */
 header {
-    background-color: #10115d; /* A dark slate blue */
+    background-color: #10115d;
     color: white;
+    padding: 15px 0; /* Adds some vertical space */
 }
 
-/* 1. Header Container (Aligns 3 items side-by-side) */
 .header-container {
     display: flex;
-    /*justify-content: space-between; /* Spreads items evenly */
-    align-items: center;          /* Vertically centers everything */
-    max-width: 2000px;            /* Boundary to prevent stretching on huge monitors */
-    margin: 0 auto;               /* Centers the container on the screen */
-    width: 100%;                  /* Takes full allowed width */
-    padding: 0 40px; /* Adds 40px of space to the left and right sides */           /* Side padding */
+    align-items: center;
+    max-width: 2000px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 40px;
 }
+
+/* LEFT & RIGHT: Must be exactly flex: 1 to center the logo */
 .header-left, 
 .header-search {
-    flex: 1;            /* This is the magic line for centering */
+    flex: 1; 
     display: flex;
     align-items: center;
-    min-width: 0;       /* Prevents content from stretching the container */
+    min-width: 0; 
 }
 
-/* This is the master container for the left side */
 .header-left {
-    flex: 1;                /* Makes this side equal to the search side */
-    display: flex;          /* This is critical: tells buttons to sit side-by-side */
-    flex-direction: row;    /* Forces horizontal alignment */
     justify-content: flex-start;
-    align-items: center;
-    gap: 15px;              /* Pushes buttons apart so they don't touch */
+    gap: 15px; /* Creates the gap between 'About Us' and 'Gallery' */
 }
 
-/* This fixes the button shape and size */
+.header-search {
+    justify-content: flex-end;
+}
+
+/* CENTER: The Logo */
+.logo-container {
+    flex: 0 0 auto; 
+    padding: 0 30px;
+    text-align: center;
+}
+
+/* BUTTONS: Matching sizes */
 .nav-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    
-    width: 120px;           /* Forces buttons to be identical in size */
-    height: 40px;           /* Forces buttons to be identical in height */
-    
-    background-color: #bc936a; 
+    width: 130px;        /* Fixed width so buttons match */
+    height: 42px;        /* Fixed height */
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
     text-decoration: none;
-    border-radius: 20px;    /* Makes them the pill shape you want */
-    font-size: 0.9rem;
-    white-space: nowrap;    /* Keeps text on one line */
-    box-sizing: border-box; /* Ensures padding doesn't break the size */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px; /* Pill shape */
+    font-size: 0.85rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
-    background-color: #bc936a; /* Matches your brand's gold/tan hover color */
+    background-color: #bc936a;
     border-color: #bc936a;
-    color: white;
 }
-
 /* 2. Spacer and Search Container (Must be equal width for true centering) */
 .header-spacer, .header-search {
     flex: 1;                     /* Both take up exactly 1/3 of the space */
