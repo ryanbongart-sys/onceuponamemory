@@ -143,13 +143,19 @@ header {
     background-color: rgba(255, 255, 255, 0.2); /* Hover highlight */
 }
 
-/* RESPONSIVENESS (Stacks items on mobile) */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column; /* Stack vertically */
-        gap: 20px;
-        padding: 0 20px;
+/* Tablet view (4 columns) */
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
     }
+}
+
+/* Large Desktop view (8 columns) */
+@media (min-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
     
     .header-spacer {
         display: none;          /* Hide the spacer on mobile */
@@ -193,20 +199,18 @@ h1 {
 /* GRID & CARDS */
 .grid { 
     display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px; /* Increased gap for a more premium, spaced-out look */
-    justify-content: center; 
-    margin: 0 auto;
-    max-width: 1200px; /* Keeps the cards from getting too giant on wide screens */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    width: 100%;
+    margin-top: 30px;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers the image and text horizontally */
-    text-align: center;
-    background: #fff;
-    padding: 20px;
+    background-color: transparent;
+    width: 100%; /* Changed from 300px to 100% */
+    aspect-ratio: 3 / 4; /* Maintains the tall shape automatically */
+    perspective: 1000px; 
+    border: none;
 }
 
 .card img {
