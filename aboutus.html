@@ -1,0 +1,169 @@
+To create an About Us page that matches your existing brand identity, we need to balance the professional nature of your custom event business with the personal touch of a creator.
+
+Based on the styles you've used previously, this code uses the Playfair Display font for an elegant feel and keeps your Navy (#0A145A) and Gold (#bc936a) color palette.
+
+about.html Full Code
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Once Upon a Memory Designs</title>
+    <link rel="stylesheet" href="gallerystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Specific Styles for About Page */
+        .about-hero {
+            background: #0A145A; /* Your Brand Navy */
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 20px 20px 0px #bc936a; /* Gold Accent Shadow */
+        }
+
+        .about-content {
+            flex: 1.5;
+            min-width: 300px;
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            color: #0A145A;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            background: #fdf8f5;
+            padding: 60px 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: #bc936a;
+            margin-bottom: 15px;
+        }
+
+        .value-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #0A145A;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 2.5rem; }
+            .about-container { flex-direction: column; text-align: center; }
+            .about-image img { box-shadow: 10px 10px 0px #bc936a; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="./logo.jpg" alt="Once Upon a Memory Designs Logo" class="logo">
+            </a>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <h1>Our Story</h1>
+        <p>Creating timeless pieces for your most cherished moments.</p>
+    </section>
+
+    <main class="about-container">
+        <div class="about-image">
+            <img src="./workspace.jpg" alt="The Designer at Work">
+        </div>
+
+        <div class="about-content">
+            <h2>Crafting Memories in Geelong</h2>
+            <p>
+                Welcome to <strong>Once Upon a Memory Designs</strong>. What started as a passion for personalized 
+                creations has grown into a dedicated custom event signage and decor studio based in Geelong, VIC.
+            </p>
+            <p>
+                Whether it's the excitement of a wedding, the joy of a new baby announcement, or honoring a 
+                loved one with a beautiful memorial, I believe that every milestone deserves a touch of 
+                personalized magic. From whiskey glasses for the groomsmen to large-scale acrylic event backdrops, 
+                every piece is handcrafted with precision and care.
+            </p>
+            <p>
+                We don't just make signs; we create keepsakes that tell your unique story.
+            </p>
+            <a href="gallery.html" class="nav-btn" style="background:#0A145A; color:white; padding: 12px 25px; display:inline-block; border-radius:30px; text-decoration:none;">View Our Work</a>
+        </div>
+    </main>
+
+    <section class="values-grid">
+        <div class="value-card">
+            <i class="fas fa-heart"></i>
+            <h3>Handcrafted</h3>
+            <p>Every item is carefully made to order in our Geelong studio.</p>
+        </div>
+        <div class="value-card">
+            <i class="fas fa-magic"></i>
+            <h3>Personalized</h3>
+            <p>Your names, your dates, your style. We make it uniquely yours.</p>
+        </div>
+        <div class="value-card">
+            <i class="fas fa-gem"></i>
+            <h3>Quality</h3>
+            <p>We use premium acrylics, timbers, and fabrics for a high-end finish.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/onceuponamemorydesigns" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/people/Once-Upon-A-Memory-Designs/61577818255636/" target="_blank" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
