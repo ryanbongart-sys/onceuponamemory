@@ -114,13 +114,26 @@
     </section>
 
     <div class="delivery-section">
-        <div class="calculator-box">
-            <h2>Delivery Estimate</h2>
-            <p>Enter your postcode to check delivery availability:</p>
-            <input type="text" id="postcode" class="postcode-input" placeholder="e.g. 3220">
-            <button class="calc-btn" onclick="calculateDelivery()">Check Price</button>
-            <div id="resultArea"></div>
+    <div class="calculator-box">
+        <h2>Shipping & Delivery Estimator</h2>
+        <p>Are you hiring large equipment or purchasing a custom keepsake?</p>
+        
+        <div style="margin-bottom: 20px;">
+            <select id="serviceType" class="postcode-input" style="width: 250px;">
+                <option value="hire">Hire (Geelong & Surrounds)</option>
+                <option value="post">Purchase (Australia-wide Postage)</option>
+            </select>
         </div>
+
+        <input type="text" id="postcode" class="postcode-input" placeholder="Enter Postcode">
+        <button class="calc-btn" onclick="calculateTotal()">Calculate Price</button>
+        
+        <div id="resultArea"></div>
+        <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">
+            *Postage includes a 30% handling & packaging surcharge.
+        </p>
+    </div>
+</div>
 
         <div class="price-list">
             <div class="price-card">
@@ -164,26 +177,39 @@
     </footer>
 
     <script>
-        function calculateDelivery() {
-            const postcode = document.getElementById('postcode').value;
-            const result = document.getElementById('resultArea');
-            
-            // Geelong Postcode Range (approx 3211-3228)
+    function calculateTotal() {
+        const postcode = document.getElementById('postcode').value;
+        const service = document.getElementById('serviceType').value;
+        const result = document.getElementById('resultArea');
+        
+        if (postcode === "") {
+            result.innerHTML = "Please enter a postcode.";
+            result.style.color = "red";
+            return;
+        }
+
+        if (service === "hire") {
+            // Geelong Local Logic
             if (postcode >= 3211 && postcode <= 3228) {
-                result.innerHTML = "📍 Local Geelong Delivery: $75.00 <br><small>Setup fees may apply based on requirements.</small>";
+                result.innerHTML = "📍 Local Geelong Delivery: $75.00 <br><small>Setup fees may apply.</small>";
                 result.style.color = "#10115d";
-             } else if (postcode === "3224") {
-                result.innerHTML = "Great news! Free local delivery via our 'Local Memories' offer. Order now!";
-                result.style.color = "red";
-            } else if (postcode === "") {
-                result.innerHTML = "Please enter a postcode.";
-                result.style.color = "red";
             } else {
-                result.innerHTML = "🌍 Outside Local Zone: Please enquire below for a custom delivery or postage quote.";
+                result.innerHTML = "🌍 Outside Local Zone: Please enquire for a custom courier quote.";
                 result.style.color = "#bc936a";
             }
+        } else {
+            // POSTAGE LOGIC (Up to date estimate + 30%)
+            // Base rates approx: Flat Envelope $3, Small Box $10, Med Box $15, Large Box $20
+            // We apply the 30% markup: (Rate * 1.3)
+            
+            let baseRate = 12.50; // Average Standard Satchel base
+            let markedUpRate = (baseRate * 1.3).toFixed(2);
+
+            result.innerHTML = "📦 Estimated Postage: $" + markedUpRate + " AUD<br><small>Final price confirmed at checkout based on weight.</small>";
+            result.style.color = "#10115d";
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>
