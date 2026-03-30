@@ -172,6 +172,9 @@
             if (postcode >= 3211 && postcode <= 3228) {
                 result.innerHTML = "📍 Local Geelong Delivery: $75.00 <br><small>Setup fees may apply based on requirements.</small>";
                 result.style.color = "#10115d";
+             } else if (postcode === "3224") {
+                result.innerHTML = "Great news! Free local delivery via our 'Local Memories' offer. Order now!";
+                result.style.color = "red";
             } else if (postcode === "") {
                 result.innerHTML = "Please enter a postcode.";
                 result.style.color = "red";
