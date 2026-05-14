@@ -190,6 +190,10 @@ header {
 }
 .header-text {
     padding: 20px;
+    flex-grow: 1;
+}
+.header-text-softplay {
+    padding: 20px;
     text-align: center;   /* Centers the h1 and paragraph */
     max-width: 1000px;    /* Prevents text from becoming too wide */
     margin: 0 auto;       /* Centers the container itself */
