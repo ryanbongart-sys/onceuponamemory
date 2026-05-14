@@ -503,11 +503,6 @@ input[type="file"]::file-selector-button:hover {
     }
 }
 /* ======================================================
-   SOFT PLAY EQUIPMENT SHOWCASE
-   Add this CSS to your style.css or inside <style>
-====================================================== */
-
-/* ======================================================
    FIX: REMOVE LARGE GAP BETWEEN HEADER AND SPINNING DIAL
    Replace your existing .soft-play-showcase,
    .header-text, and .carousel-wrapper CSS with this.
@@ -558,7 +553,7 @@ input[type="file"]::file-selector-button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px;
+    min-height: 500px;
     perspective: 2000px;
     margin: 0;            /* remove all margins */
     padding: 0;           /* remove all padding */
@@ -567,8 +562,8 @@ input[type="file"]::file-selector-button:hover {
 /* Pull the carousel upward to sit directly under text */
 .carousel {
     position: relative;
-    width: 520px;
-    height: 520px;
+    width: 420px;
+    height: 420px;
     transform-style: preserve-3d;
     animation: rotate360 35s linear infinite;
     margin-top: -120px;   /* key adjustment to remove large blank space */
