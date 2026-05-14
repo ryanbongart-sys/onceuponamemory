@@ -441,7 +441,7 @@ input[type="file"]::file-selector-button:hover {
 .enquiry input:focus, 
 .enquiry textarea:focus {
     outline: none;
-    border-color: #71c1e8;   /* Changes border to your brand navy when active */
+    border-color: #10115d;   /* Changes border to your brand navy when active */
     box-shadow: 0 0 5px rgba(16, 17, 93, 0.2);
 }
 
