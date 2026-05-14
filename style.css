@@ -552,8 +552,8 @@ input[type="file"]::file-selector-button:hover {
 
 .carousel {
     position: relative;
-    width: 420px;   /* increased from 280px */
-    height: 420px;  /* increased from 280px */
+    width: 320px;   /* increased from 280px */
+    height: 320px;  /* increased from 280px */
     transform-style: preserve-3d;
     animation: rotate360 35s linear infinite;
 }
@@ -567,7 +567,7 @@ input[type="file"]::file-selector-button:hover {
     inset: 0;
     transform:
         rotateY(calc(var(--i) * 36deg))
-        translateZ(620px); /* pushed further out for bigger dial */
+        translateZ(520px); /* pushed further out for bigger dial */
 }
 
 .carousel span img {
