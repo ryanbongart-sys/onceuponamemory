@@ -522,8 +522,8 @@ input[type="file"]::file-selector-button:hover {
 ====================================================== */
 
 .soft-play-showcase {
-    background: linear-gradient(180deg, #fff 0%, #fdf8f5 100%);
-    padding: 80px 20px 100px; /* reduced top padding */
+    background: linear-gradient(180deg, #ffffff 0%, #fdf8f5 100%);
+    padding: 60px 20px 80px;
     text-align: center;
     overflow: hidden;
 }
@@ -533,41 +533,51 @@ input[type="file"]::file-selector-button:hover {
     margin: 0 auto;
 }
 
-/* Heading */
-.soft-play-showcase .header-text h1 {
+/* Center heading */
+.header-text-softplay {
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.header-text-softplay h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.4rem;
     color: #2c3e50;
-    margin-bottom: 20px;
     line-height: 1.2;
+    margin: 0;
 }
 
-.soft-play-showcase .header-text p {
+/* Description text under carousel */
+.soft-play-showcase > p {
     font-family: 'Lato', sans-serif;
     font-size: 1.15rem;
     color: #666;
-    max-width: 800px;
-    margin: 0 auto 20px; /* reduced from 70px to 20px */
+    max-width: 850px;
+    margin: 40px auto 0;
     line-height: 1.8;
+    padding: 0 20px;
 }
 
 /* ======================================================
-   3D ROTATING IMAGE DIAL
+   3D ROTATING CAROUSEL
 ====================================================== */
+
 .carousel-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 700px; /* increased for larger images */
+    min-height: 700px;
     perspective: 2000px;
-    margin-bottom: 60px;
-    margin-top: -10px; /* pulls carousel closer to text */
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .carousel {
     position: relative;
-    width: 420px;   /* increased from 280px */
-    height: 420px;  /* increased from 280px */
+    width: 420px;
+    height: 420px;
     transform-style: preserve-3d;
     animation: rotate360 35s linear infinite;
 }
@@ -581,7 +591,7 @@ input[type="file"]::file-selector-button:hover {
     inset: 0;
     transform:
         rotateY(calc(var(--i) * 36deg))
-        translateZ(620px); /* pushed further out for bigger dial */
+        translateZ(620px);
 }
 
 .carousel span img {
@@ -609,8 +619,9 @@ input[type="file"]::file-selector-button:hover {
 }
 
 /* ======================================================
-   FEATURES SECTION
+   SOFT PLAY FEATURES
 ====================================================== */
+
 .soft-play-features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -621,6 +632,7 @@ input[type="file"]::file-selector-button:hover {
 /* ======================================================
    CTA BUTTON
 ====================================================== */
+
 .soft-play-cta {
     margin-top: 50px;
 }
@@ -646,18 +658,28 @@ input[type="file"]::file-selector-button:hover {
 }
 
 /* ======================================================
-   REDUCED MOTION
+   ACCESSIBILITY
 ====================================================== */
+
 @media (prefers-reduced-motion: reduce) {
     .carousel {
         animation: none;
+    }
+
+    .carousel span img {
+        transition: none;
     }
 }
 
 /* ======================================================
    TABLET
 ====================================================== */
+
 @media (max-width: 1024px) {
+    .header-text-softplay h1 {
+        font-size: 2.8rem;
+    }
+
     .carousel-wrapper {
         min-height: 520px;
     }
@@ -677,24 +699,30 @@ input[type="file"]::file-selector-button:hover {
 /* ======================================================
    MOBILE
 ====================================================== */
+
 @media (max-width: 768px) {
     .soft-play-showcase {
-        padding: 60px 20px 80px;
+        padding: 50px 20px 70px;
     }
 
-    .soft-play-showcase .header-text h1 {
-        font-size: 2.3rem;
+    .header-text-softplay {
+        margin-bottom: 15px;
     }
 
-    .soft-play-showcase .header-text p {
+    .header-text-softplay h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .soft-play-showcase > p {
         font-size: 1rem;
-        margin-bottom: 10px; /* keep text close to carousel */
+        line-height: 1.7;
+        margin-top: 30px;
     }
 
     .carousel-wrapper {
         min-height: 320px;
-        margin-bottom: 40px;
-        margin-top: 0;
+        margin-bottom: 10px;
     }
 
     .carousel {
@@ -713,4 +741,3 @@ input[type="file"]::file-selector-button:hover {
         font-size: 0.95rem;
     }
 }
-```
