@@ -12,7 +12,7 @@ body {
 
 /* --- CLEANED & FIXED HEADER --- */
 header {
-    background-color: #10115d;
+    background-color: #71c1e8;
     color: white;
     padding: 15px 0; /* Adds some vertical space */
 }
@@ -77,8 +77,8 @@ header {
 }
 
 .nav-btn:hover {
-    background-color: #bc936a;
-    border-color: #bc936a;
+    background-color: #71c1e8;
+    border-color: #71c1e8;
 }
 /* 2. Spacer and Search Container (Must be equal width for true centering) */
 .header-spacer, .header-search {
@@ -247,7 +247,7 @@ h1 {
    ======================================== */
 .trust-features {
     /* Background matches your existing header/footer navy blue */
-    background-color: #10115d;
+    background-color: #71c1e8;
     color: white;
     padding: 80px 20px; /* Spacious vertical padding like the ref */
     text-align: center;
@@ -355,10 +355,10 @@ button {
     border-radius: 4px; 
 }
 
-button:hover { background: #bc936a; }
+button:hover { background: #71c1e8; }
 
 footer {
-    background-color: #10115d; /* Matches your header */
+    background-color: #71c1e8; /* Matches your header */
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -441,7 +441,7 @@ input[type="file"]::file-selector-button:hover {
 .enquiry input:focus, 
 .enquiry textarea:focus {
     outline: none;
-    border-color: #10115d;   /* Changes border to your brand navy when active */
+    border-color: #71c1e8;   /* Changes border to your brand navy when active */
     box-shadow: 0 0 5px rgba(16, 17, 93, 0.2);
 }
 
