@@ -509,46 +509,51 @@ input[type="file"]::file-selector-button:hover {
 
 .soft-play-showcase {
     background: linear-gradient(180deg, #fff 0%, #fdf8f5 100%);
-    padding: 100px 20px;
+    padding: 80px 20px 100px; /* reduced top padding */
     text-align: center;
     overflow: hidden;
 }
 
 .soft-play-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
+/* Heading */
 .soft-play-showcase .header-text h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 3.4rem;
     color: #2c3e50;
     margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .soft-play-showcase .header-text p {
     font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #666;
-    max-width: 750px;
-    margin: 0 auto 70px;
+    max-width: 800px;
+    margin: 0 auto 20px; /* reduced from 70px to 20px */
     line-height: 1.8;
 }
 
-/* ===== 3D Rotating Carousel ===== */
+/* ======================================================
+   3D ROTATING IMAGE DIAL
+====================================================== */
 .carousel-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 500px;
-    perspective: 1500px;
-    margin-bottom: 80px;
+    min-height: 700px; /* increased for larger images */
+    perspective: 2000px;
+    margin-bottom: 60px;
+    margin-top: -10px; /* pulls carousel closer to text */
 }
 
 .carousel {
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 420px;   /* increased from 280px */
+    height: 420px;  /* increased from 280px */
     transform-style: preserve-3d;
     animation: rotate360 35s linear infinite;
 }
@@ -562,22 +567,22 @@ input[type="file"]::file-selector-button:hover {
     inset: 0;
     transform:
         rotateY(calc(var(--i) * 36deg))
-        translateZ(430px);
+        translateZ(620px); /* pushed further out for bigger dial */
 }
 
 .carousel span img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(44, 62, 80, 0.18);
-    border: 6px solid #ffffff;
+    border-radius: 28px;
+    border: 8px solid #ffffff;
+    box-shadow: 0 25px 60px rgba(44, 62, 80, 0.20);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .carousel span img:hover {
-    transform: scale(1.06);
-    box-shadow: 0 25px 50px rgba(44, 62, 80, 0.25);
+    transform: scale(1.05);
+    box-shadow: 0 30px 70px rgba(44, 62, 80, 0.28);
 }
 
 @keyframes rotate360 {
@@ -589,7 +594,19 @@ input[type="file"]::file-selector-button:hover {
     }
 }
 
-/* ===== CTA Button ===== */
+/* ======================================================
+   FEATURES SECTION
+====================================================== */
+.soft-play-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* ======================================================
+   CTA BUTTON
+====================================================== */
 .soft-play-cta {
     margin-top: 50px;
 }
@@ -614,53 +631,56 @@ input[type="file"]::file-selector-button:hover {
     box-shadow: 0 15px 30px rgba(44, 62, 80, 0.22);
 }
 
-/* ===== Reuse Existing Feature Styling ===== */
-.soft-play-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-/* ===== Reduced Motion Support ===== */
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
 @media (prefers-reduced-motion: reduce) {
     .carousel {
         animation: none;
     }
 }
 
-/* ===== Tablet ===== */
+/* ======================================================
+   TABLET
+====================================================== */
 @media (max-width: 1024px) {
+    .carousel-wrapper {
+        min-height: 520px;
+    }
+
     .carousel {
-        width: 230px;
-        height: 230px;
+        width: 300px;
+        height: 300px;
     }
 
     .carousel span {
         transform:
             rotateY(calc(var(--i) * 36deg))
-            translateZ(320px);
+            translateZ(420px);
     }
 }
 
-/* ===== Mobile ===== */
+/* ======================================================
+   MOBILE
+====================================================== */
 @media (max-width: 768px) {
     .soft-play-showcase {
-        padding: 70px 20px;
+        padding: 60px 20px 80px;
     }
 
     .soft-play-showcase .header-text h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
     }
 
     .soft-play-showcase .header-text p {
         font-size: 1rem;
-        margin-bottom: 50px;
+        margin-bottom: 10px; /* keep text close to carousel */
     }
 
     .carousel-wrapper {
-        min-height: 360px;
-        margin-bottom: 50px;
+        min-height: 320px;
+        margin-bottom: 40px;
+        margin-top: 0;
     }
 
     .carousel {
