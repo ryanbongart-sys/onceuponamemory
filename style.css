@@ -502,4 +502,180 @@ input[type="file"]::file-selector-button:hover {
         max-width: 250px; /* Shrinks logo so it fits better on small screens */
     }
 }
+/* ======================================================
+   SOFT PLAY EQUIPMENT SHOWCASE
+   Add this CSS to your style.css or inside <style>
+====================================================== */
 
+.soft-play-showcase {
+    background: linear-gradient(180deg, #fff 0%, #fdf8f5 100%);
+    padding: 100px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.soft-play-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.soft-play-showcase .header-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.soft-play-showcase .header-text p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 750px;
+    margin: 0 auto 70px;
+    line-height: 1.8;
+}
+
+/* ===== 3D Rotating Carousel ===== */
+.carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    perspective: 1500px;
+    margin-bottom: 80px;
+}
+
+.carousel {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    transform-style: preserve-3d;
+    animation: rotate360 35s linear infinite;
+}
+
+.carousel:hover {
+    animation-play-state: paused;
+}
+
+.carousel span {
+    position: absolute;
+    inset: 0;
+    transform:
+        rotateY(calc(var(--i) * 36deg))
+        translateZ(430px);
+}
+
+.carousel span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(44, 62, 80, 0.18);
+    border: 6px solid #ffffff;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carousel span img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 25px 50px rgba(44, 62, 80, 0.25);
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotateX(-8deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(-8deg) rotateY(360deg);
+    }
+}
+
+/* ===== CTA Button ===== */
+.soft-play-cta {
+    margin-top: 50px;
+}
+
+.soft-play-btn {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.15);
+}
+
+.soft-play-btn:hover {
+    background-color: #1f2d3a;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(44, 62, 80, 0.22);
+}
+
+/* ===== Reuse Existing Feature Styling ===== */
+.soft-play-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* ===== Reduced Motion Support ===== */
+@media (prefers-reduced-motion: reduce) {
+    .carousel {
+        animation: none;
+    }
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+    .carousel {
+        width: 230px;
+        height: 230px;
+    }
+
+    .carousel span {
+        transform:
+            rotateY(calc(var(--i) * 36deg))
+            translateZ(320px);
+    }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+    .soft-play-showcase {
+        padding: 70px 20px;
+    }
+
+    .soft-play-showcase .header-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .soft-play-showcase .header-text p {
+        font-size: 1rem;
+        margin-bottom: 50px;
+    }
+
+    .carousel-wrapper {
+        min-height: 360px;
+        margin-bottom: 50px;
+    }
+
+    .carousel {
+        width: 170px;
+        height: 170px;
+    }
+
+    .carousel span {
+        transform:
+            rotateY(calc(var(--i) * 36deg))
+            translateZ(220px);
+    }
+
+    .soft-play-btn {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+    }
+}
