@@ -12,7 +12,7 @@ body {
 
 /* --- UPDATED HEADER CSS --- */
 header {
-    background-color: #10115d; /* A dark slate blue */
+    background-color: #71c1e8; /* A dark slate blue */
     color: white;
 }
 
@@ -227,7 +227,7 @@ h1 {
    ======================================== */
 .trust-features {
     /* Background matches your existing header/footer navy blue */
-    background-color: #10115d;
+    background-color: #71c1e8;
     color: white;
     padding: 80px 20px; /* Spacious vertical padding like the ref */
     text-align: center;
@@ -338,7 +338,7 @@ button {
 button:hover { background: #bc936a; }
 
 footer {
-    background-color: #10115d; /* Matches your header */
+    background-color: #71c1e8; /* Matches your header */
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -421,7 +421,7 @@ input[type="file"]::file-selector-button:hover {
 .enquiry input:focus, 
 .enquiry textarea:focus {
     outline: none;
-    border-color: #10115d;   /* Changes border to your brand navy when active */
+    border-color: #71c1e8;   /* Changes border to your brand navy when active */
     box-shadow: 0 0 5px rgba(16, 17, 93, 0.2);
 }
 
