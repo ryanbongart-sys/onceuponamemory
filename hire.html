@@ -178,28 +178,34 @@
             margin: 0;
         }
 
-        /* ENQUIRY FORM STYLES */
+        /* UPDATED ENQUIRY FORM STYLES */
         .enquiry {
-            background: #333;
-            color: white;
+            background: #fff;
+            color: #333;
             padding: 60px 20px;
             text-align: center;
+            border-top: 1px solid #e2e8f0;
         }
 
         .enquiry-container {
             max-width: 550px;
             margin: 0 auto;
-            background: transparent;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #f0f4f8;
         }
 
         .enquiry-container h2 {
             font-size: 2.2rem;
             margin-bottom: 10px;
+            color: #1a365d;
         }
 
         .enquiry-container p {
             margin-bottom: 30px;
-            color: #ccc;
+            color: #666;
         }
 
         form {
@@ -210,10 +216,20 @@
         input, textarea {
             margin-bottom: 15px;
             padding: 14px;
-            border: none;
+            border: 1px solid #cbd5e1;
             border-radius: 6px;
             font-size: 1rem;
             font-family: 'Lato', sans-serif;
+            background-color: #f8fafc;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #7ec5f2;
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(126, 197, 242, 0.2);
         }
 
         button[type="submit"] {
@@ -226,23 +242,27 @@
             font-weight: bold;
             border-radius: 6px;
             transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(126, 197, 242, 0.3);
         }
 
         button[type="submit"]:hover {
             background: #bc936a;
+            box-shadow: 0 4px 12px rgba(188, 147, 106, 0.3);
         }
 
-        /* FOOTER STYLES */
+        /* UPDATED FOOTER STYLES */
         footer {
-            background: #222;
+            background: #1a365d; /* Cohesive deep blue matching the typography tone */
             color: #fff;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
         .footer-content p {
-            margin: 0 0 15px 0;
-            font-size: 0.9rem;
+            margin: 0 0 20px 0;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            color: #e2e8f0;
         }
 
         .social-links {
@@ -252,19 +272,21 @@
         }
 
         .social-btn {
-            color: white;
-            background: rgba(255,255,255,0.1);
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
+            color: #1a365d;
+            background: #fff;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
             border-radius: 50%;
             display: inline-block;
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .social-btn:hover {
-            background: #7ec5f2;
-            transform: scale(1.1);
+            background: #bc936a;
+            color: #fff;
+            transform: scale(1.1) translateY(-2px);
         }
     </style>
 </head>
