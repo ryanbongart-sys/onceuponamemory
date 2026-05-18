@@ -9,155 +9,41 @@
     <meta name="p:domain_verify" content="e4e3352d1fe1b08e1a8dcbfb757ea3fe"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-
-        /* --- Animation Styles --- */
-        .grid { 
-    display: grid; 
-    /* This forces 3 columns of equal width regardless of content */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    width: 100%;
-}
-
-/* Adjust the card image to handle the new smaller width */
-.card img { 
-    width: 100%; 
-    height: auto; 
-    aspect-ratio: 1 / 1; /* Makes all images perfectly square like your screenshot */
-    object-fit: cover;   /* Prevents images from stretching */
-    border-radius: 12px 12px 0 0; 
-}
-
-        /* The container that provides the 3D perspective */
-        .card {
-            background-color: transparent;
-            width: 300px;
-            height: 400px;
-            perspective: 1000px; 
-            border: none; /* Removing default border if any */
-        }
-
-        /* This wrapper handles the actual rotation */
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-        }
-
-        /* Flip effect on hover */
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-
-        /* Front and Back styling */
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Front Side */
-        .card-front {
-            background-color: #fff;
-        }
-     
-        .card-front img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-front p {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 0;
-            padding: 15px 0;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
-
-        /* Back Side */
-        .card-back {
-            background-color: #fdf8f5; /* A soft cream color to match event vibes */
-            color: #2c3e50;
-            transform: rotateY(180deg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            border: 1px solid #eee;
-        }
-
-        .card-back h3 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 10px;
-        }
-
-        .card-back button {
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-top: 15px;
-            cursor: pointer;
-            font-family: 'Lato', sans-serif;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .card-inner { transition: none; }
-        }
-    </style>
-
 </head>
 <body>
     
     <header>
         <div class="header-container">
-    <div class="header-left">
-        <a href="aboutus.html" class="nav-btn">About Us</a>
-        <a href="imagegallery.html" class="nav-btn">Gallery</a>
-        <a href="hire.html" class="nav-btn">Hire</a>
-        <a href=".html" class="nav-btn">Pricing</a>
-    </div>
+            <div class="header-left">
+                <a href="aboutus.html" class="nav-btn">About Us</a>
+                <a href="imagegallery.html" class="nav-btn">Gallery</a>
+                <a href="hire.html" class="nav-btn">Hire</a>
+                <a href=".html" class="nav-btn">Pricing</a>
+            </div>
 
-        <div class="logo-container">
-    <a href="index.html" class="logo-link">
-        <img src="./logo.jpeg" alt="Once Upon a Memory Designs Logo" class="logo">
-    </a>
-</div>
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="./logo.jpeg" alt="Once Upon a Memory Designs Logo" class="logo">
+                </a>
+            </div>
 
-        <div class="header-search">
-            <form action="https://au.pinterest.com/onceuponamemorydesigns/" method="GET">
-                <input type="text" name="q" placeholder="Search for designs..." class="search-input" aria-label="Search site">
-                <button type="submit" class="search-button">
-                    Search
-                </button>
-            </form>
+            <div class="header-search">
+                <form action="https://au.pinterest.com/onceuponamemorydesigns/" method="GET">
+                    <input type="text" name="q" placeholder="Search for designs..." class="search-input" aria-label="Search site">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
         </div>
-    </div>
-</header>
-</section> 
-<section class="soft-play-showcase">
-    <div class="soft-play-container">
-        <div class="header-text-softplay">
-            <h1>Our Services We Offer!</h1>
+    </header>
+
+    <section class="soft-play-showcase">
+        <div class="soft-play-container">
+            <div class="header-text-softplay">
+                <h1>Our Services We Offer!</h1>
+            </div>
         </div>
-    </div>
-    <!-- Rotating 360° Image Dial -->
-    <div class="carousel-wrapper">
+
+        <div class="carousel-wrapper">
             <div class="carousel">
                 <span style="--i:1;"><img src="./softplay1.jpeg" alt="Setup 1"></span>
                 <span style="--i:2;"><img src="./image4.jpg" alt="Setup 2"></span>
@@ -175,16 +61,27 @@
                 <span style="--i:14;"><img src="./image17.png" alt="Setup 14"></span>
             </div>
         </div>
-   
-</section> 
-</section> 
+
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section> 
+
     <section class="trust-features">
+        <div class="custom-shape-divider-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
         <p>
-                Create unforgettable moments with our premium soft play sets,
-                ball pits, slides and climbing equipment. Perfect for first
-                birthdays, christenings, baby showers and special celebrations.
-    </p>
-        <!-- Feature Highlights -->
+            Create unforgettable moments with our premium soft play sets,
+            ball pits, slides and climbing equipment. Perfect for first
+            birthdays, christenings, baby showers and special celebrations.
+        </p>
+
         <div class="soft-play-features">
             <div class="feature-item">
                 <div class="feature-icon">
@@ -215,15 +112,17 @@
             <a href="#contact" class="soft-play-btn">Book Soft Play Hire</a>
         </div>
 
-    </div>
-</section> 
-   
-</section>
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
 
     <section class="gallery">
         <div class="header-text">
-                <h1>Custom Event Signage & Personalised Decor</h1>
-            </div>
+            <h1>Custom Event Signage & Personalised Decor</h1>
+        </div>
         <div class="grid">
                 
             <div class="card">
@@ -239,12 +138,12 @@
                     </div>
                 </div>
             </div>
+
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
                         <img src="./image2.jpg" alt="Custom Memorials of Life">
                         <p>Custom Memorials of Life</p>
-
                     </div>
                     <div class="card-back">
                         <h3>Custom Memorials of Life</h3>
@@ -267,6 +166,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
@@ -280,6 +180,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
@@ -288,7 +189,7 @@
                     </div>
                     <div class="card-back">
                         <h3>Special Events & Holidays</h3>
-                        <p>Smaller events like Christmas and Easter won't be missed. We design to ensure all events have a sweet touch of Once Upon A Memory Designs. </p>
+                        <p>Smaller events like Christmas and Easter won't be missed. We design to ensure all events have a sweet touch of Once Upon A Memory Designs.</p>
                         <a href="#contact"><button>Enquire Now</button></a>
                     </div>
                 </div>
@@ -298,94 +199,80 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <img src="image3.jpg" alt="Signage Equipment Hire / Delivery">
-
                         <p>Signage Equipment Hire / Delivery</p>
-
                     </div>
                     <div class="card-back">
                         <h3>Signage Equipment Hire / Delivery</h3>
-                        <p>Signage doesn't always have to be a keepsake, hire and return the equipment. Delivery options available. </p>
+                        <p>Signage doesn't always have to be a keepsake, hire and return the equipment. Delivery options available.</p>
                         <a href="#contact"><button>Enquire Now</button></a>
-
                     </div>
                 </div>
             </div>
 
-
         </div>
-     </div>
-</section> 
+    </section> 
+
     <section class="trust-features">
-    <div class="features-container">
-        
-        <div class="feature-item">
-            <div class="feature-icon">
-                <i class="fa-solid fa-gem"></i>
+        <div class="features-container">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <h3>Premium Designs</h3>
+                <p>Every design is handcrafted with care.</p>
             </div>
-            <h3>Premium Designs</h3>
-            <p>Every design is handcrafted with care.</p>
-        </div>
 
-        <div class="feature-item">
-            <div class="feature-icon">
-                <i class="fa-solid fa-shipping-fast"></i>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shipping-fast"></i>
+                </div>
+                <h3>Fast Geelong Delivery</h3>
+                <p>Local delivery or fast nationwide shipping on all custom orders.</p>
             </div>
-            <h3>Fast Geelong Delivery</h3>
-            <p>Local delivery or fast nationwide shipping on all custom orders.</p>
-        </div>
 
-        <div class="feature-item">
-            <div class="feature-icon">
-                <i class="fa-solid fa-palette"></i>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <h3>Custom Enquiries</h3>
+                <p>Can't find a perfect match? Send us your inspiration for a personalised Once Upon A Memory Design.</p>
             </div>
-            <h3>Custom Enquiries</h3>
-            <p>Can't find a perfect match? Send us your inspiration for a personalised Once Upon A Memory Design.</p>
-        </div>
 
-        <div class="feature-item">
-            <div class="feature-icon">
-                <i class="fa-solid fa-certificate"></i>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <h3>Quality Guaranteed</h3>
+                <p>We pride ourselves on attention to detail to make your special moments memorable.</p>
             </div>
-            <h3>Quality Guaranteed</h3>
-            <p>We pride ourselves on attention to detail to make your special moments memorable.</p>
         </div>
-
-    </div>
-</section>
+    </section>
 
     <section class="enquiry" id="contact">
         <h2>Request an Enquiry</h2>
         <form action="https://formspree.io/f/mgonbrgy" method="POST" enctype="multipart/form-data">
-            
-            
-
             <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    
-
-    <textarea name="message" placeholder="Tell us about your event and design... "></textarea>
-    
-    <button type="submit">Send Enquiry</button>
-</form>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Tell us about your event and design... "></textarea>
+            <button type="submit">Send Enquiry</button>
+        </form>
     </section>
 
     <footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
-        
-        <div class="social-links">
-            <a href="https://www.instagram.com/onceuponamemorydesigns" target="_blank" class="social-btn instagram" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
+        <div class="footer-content">
+            <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
             
-            <a href="https://www.facebook.com/people/Once-Upon-A-Memory-Designs/61577818255636/" target="_blank" class="social-btn facebook" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
+            <div class="social-links">
+                <a href="https://www.instagram.com/onceuponamemorydesigns" target="_blank" class="social-btn instagram" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/people/Once-Upon-A-Memory-Designs/61577818255636/" target="_blank" class="social-btn facebook" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
-
 </html>
-
