@@ -18,7 +18,7 @@
                 <a href="aboutus.html" class="nav-btn">About Us</a>
                 <a href="imagegallery.html" class="nav-btn">Gallery</a>
                 <a href="hire.html" class="nav-btn">Hire</a>
-                <a href=".html" class="nav-btn">Pricing</a>
+                <a href="pricing.html" class="nav-btn">Pricing</a>
             </div>
 
             <div class="logo-container">
@@ -28,10 +28,15 @@
             </div>
 
             <div class="header-search">
-                <form action="https://au.pinterest.com/onceuponamemorydesigns/" method="GET">
-                    <input type="text" name="q" placeholder="Search for designs..." class="search-input" aria-label="Search site">
-                    <button type="submit" class="search-button">Search</button>
-                </form>
+                <div class="header-actions">
+                    <form action="https://au.pinterest.com/onceuponamemorydesigns/" method="GET">
+                        <input type="text" name="q" placeholder="Search for designs..." class="search-input" aria-label="Search site">
+                        <button type="submit" class="search-button">Search</button>
+                    </form>
+                    <a href="#contact" class="contact-nav-btn" aria-label="Contact Us">
+                        <i class="fa-solid fa-envelope"></i> Contact Us
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -82,7 +87,7 @@
             birthdays, christenings, baby showers and special celebrations.
         </p>
 
-        <div class="soft-play-features">
+        <div class="features-container">
             <div class="feature-item">
                 <div class="feature-icon">
                     <i class="fa-solid fa-baby"></i>
@@ -254,6 +259,12 @@
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Tell us about your event and design... "></textarea>
+            
+            <div class="file-upload-wrapper">
+                <label class="upload-label" for="event-inspiration">Upload Design Inspiration (Optional):</label>
+                <input type="file" id="event-inspiration" name="attachment" class="file-input" accept="image/*,.pdf">
+            </div>
+
             <button type="submit">Send Enquiry</button>
         </form>
     </section>
