@@ -887,3 +887,14 @@ footer {
     .carousel span img { transition: none; }
     .card-inner { transition: none; }
 }
+/* 1. Remove the default bullet points */
+.heart-list {
+  list-style-type: none;
+}
+
+/* 2. Add a heart emoji as the new dot point marker */
+.heart-list li::marker {
+  content: "❤️ ";
+  color: #ff4d6d; /* Optional: changes the heart color */
+  font-size: 1.2em; /* Optional: resizes the heart */
+}
