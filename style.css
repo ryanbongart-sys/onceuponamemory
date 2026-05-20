@@ -899,7 +899,7 @@ footer {
   font-size: 1.2em; /* Optional: resizes the heart */
 }
 .package-img {
-    width: 80%;
+    width: 105%;
     height: 450px;        /* Forces all images to have an identical height */
     object-fit: cover;    /* Crops the images cleanly without stretching or squeezing them */
     border-radius: 8px;   /* Soft rounded corners matching your site layout */
