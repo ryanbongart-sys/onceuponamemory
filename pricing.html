@@ -124,18 +124,37 @@
         </div>
     </section>
 
-    <!-- Project Enquiry Footer Form (Inherited global styles) -->
-    <section class="enquiry">
-        <h2>Request a Custom Signage Quote</h2>
-        <p style="margin-bottom: 25px; color: #ccc;">Share your design requirements below, and let's craft something unforgettable.</p>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="text" placeholder="Event Date & Venue Location" required>
-            <textarea rows="5" placeholder="Which package or standalone assets are you looking for? Share your dimensions, material preference (acrylic/timber), and color themes here..." required></textarea>
-            <button type="submit">Submit Booking Enquiry</button>
+    <section class="enquiry" id="contact">
+        <h2>Request a Pricing Quote</h2>
+        <form action="https://formspree.io/f/mgonbrgy" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Tell us about your event and what you require pricing on... "></textarea>
+            
+            <div class="file-upload-wrapper">
+                <label class="upload-label" for="event-inspiration">Upload Design Inspiration (Optional):</label>
+                <input type="file" id="event-inspiration" name="attachment" class="file-input" accept="image/*,.pdf">
+            </div>
+
+            <button type="submit">Send Enquiry</button>
         </form>
     </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/onceuponamemorydesigns" target="_blank" class="social-btn instagram" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/people/Once-Upon-A-Memory-Designs/61577818255636/" target="_blank" class="social-btn facebook" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
