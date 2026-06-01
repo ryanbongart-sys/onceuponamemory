@@ -58,7 +58,7 @@ header {
 
 .header-left {
     justify-content: flex-start;
-    gap: 15px;                             
+    gap: 15px;                                       
 }
 
 .header-search {
@@ -123,7 +123,7 @@ header {
 
 .header-search form {
     display: flex;
-    gap: 0;                                             
+    gap: 0;                                                                     
     border: 1px solid rgba(255, 255, 255, 0.4); 
     border-radius: 25px;        
     overflow: hidden;           
@@ -546,7 +546,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: auto;
+    height: 100%;
     min-height: 420px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -601,6 +601,27 @@ header {
     transform: scale(1.03);
     background-color: #ffffff;
     box-shadow: 0 10px 25px rgba(10, 20, 90, 0.08);
+}
+
+.package-img {
+    width: 100%;
+    height: 450px;        
+    object-fit: contain;    
+    border-radius: 8px;   
+    margin: 15px 0;       
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+}
+
+/* Heart Lists Custom Design */
+.heart-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.heart-list li::marker {
+    content: "🩵 ";
+    color: #ff4d6d; 
+    font-size: 1.2em; 
 }
 
 /* ======================================================
@@ -786,23 +807,52 @@ footer {
         flex-direction: column; 
         gap: 20px;
         padding: 0 20px;
+        text-align: center;
     }
 
+    /* Fixed Layout adjustments for Mobile Containers */
+    .header-left,
     .header-search {
-        width: 100%;            
-        justify-content: center; 
+        width: 100%;
+        flex: none;
+        justify-content: center;
+    }
+
+    .header-left {
+        flex-direction: column;
+        gap: 12px;
     }
 
     .header-actions {
         flex-direction: column;
         width: 100%;
-        gap: 10px;
+        gap: 12px;
+    }
+
+    /* Standardizes structural sizing constraints across elements */
+    .nav-btn {
+        width: 100%;
+        max-width: 280px;
+        height: 44px; /* Slightly larger targets for easier tapping */
     }
     
     .header-search form,
     .contact-nav-btn {
         width: 100%;
-        max-width: 400px;
+        max-width: 280px;
+    }
+
+    .contact-nav-btn {
+        height: 44px;
+    }
+
+    .search-input {
+        width: 100%; /* Allows form to scale properly inside bounded width */
+    }
+
+    .logo {
+        max-width: 200px; /* Kept compact to conserve vertical space */
+        margin: 0 auto;
     }
 
     .soft-play-showcase {
@@ -871,8 +921,9 @@ footer {
         width: 90%;
     }
 
-    .logo {
-        max-width: 250px;
+    /* Adjust imagery behavior inside structural cards on mobile */
+    .package-img {
+        height: 170px;    
     }
 
     /* Reset package scales on smaller mobile screens to maintain layout containment */
@@ -886,38 +937,4 @@ footer {
     .carousel { animation: none; }
     .carousel span img { transition: none; }
     .card-inner { transition: none; }
-}
-/* 1. Remove the default bullet points */
-.heart-list {
-  list-style-type: none;
-}
-
-/* 2. Add a heart emoji as the new dot point marker */
-.heart-list li::marker {
-  content: "🩵 ";
-  color: #ff4d6d; /* Optional: changes the heart color */
-  font-size: 1.2em; /* Optional: resizes the heart */
-}
-.package-img {
-    width: 100%;
-    height: 450px;        /* Forces all images to have an identical height */
-    object-fit: contain;    /* Crops the images cleanly without stretching or squeezing them */
-    border-radius: 8px;   /* Soft rounded corners matching your site layout */
-    margin: 15px 0;       /* Gives breathing room between the header and the price */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Adds a subtle depth shadow */
-}
-
-/* Adjust card behavior to handle extra visual content gracefully */
-.pricing-card {
-    display: flex;
-    flex-direction: column;
-  justify-content: space-between; /* Distributes space evenly */
-  height: 100%;
-}
-
-/* Mobile Tweak */
-@media (max-width: 768px) {
-    .package-img {
-        height: 170px;    /* Marginally drops image height on mobile viewports for compact scrolling */
-    }
 }
