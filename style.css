@@ -1078,11 +1078,11 @@ header {
 
 /* ======================================================
 
-   PRICING & INVESTMENT PACKAGES ENGINE
+   SOFTPLAY & INVESTMENT PACKAGES ENGINE
 
 ====================================================== */
 
-.pricing-card {
+.softplay-card {
 
     background-color: #fdf8f5;
 
@@ -1106,7 +1106,7 @@ header {
 
 
 
-.pricing-card h3 {
+.softplay-card h3 {
 
     font-family: 'Playfair Display', serif;
 
