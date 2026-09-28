@@ -19,7 +19,10 @@ h1 {
     margin: 0 0 10px 0; 
 }
 
-/* Structural selector to ensure proper fallback inheritance across layouts */
+h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+}
+
 .Sec2 {
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -31,11 +34,12 @@ h1 {
    HEADER STYLING
 ====================================================== */
 header {
-    background-color: #71c1e8;
+    background-color: #0A145A;
     color: white;
-    padding: 20px 0 10px 0;
+    padding: 30px 20px;
     position: relative;
     z-index: 10;
+    text-align: center;
 }
 
 .header-container {
@@ -47,7 +51,6 @@ header {
     padding: 0 40px;
 }
 
-/* Left & Right layout distribution */
 .header-left, 
 .header-search {
     flex: 1; 
@@ -58,7 +61,7 @@ header {
 
 .header-left {
     justify-content: flex-start;
-    gap: 15px;                                       
+    gap: 15px;                                         
 }
 
 .header-search {
@@ -108,10 +111,10 @@ header {
 }
 
 .logo {
-    max-width: 350px;
+    max-width: 250px;
     height: auto;
-    border-radius: 50%;
     display: block; 
+    margin: 0 auto;
 }
 
 /* Header Action Layout & Elements */
@@ -123,7 +126,7 @@ header {
 
 .header-search form {
     display: flex;
-    gap: 0;                                                                     
+    gap: 0;                                                                           
     border: 1px solid rgba(255, 255, 255, 0.4); 
     border-radius: 25px;        
     overflow: hidden;           
@@ -163,7 +166,6 @@ header {
     background-color: rgba(255, 255, 255, 0.2); 
 }
 
-/* Header Contact Badge Pill */
 .contact-nav-btn {
     display: flex;
     align-items: center;
@@ -225,7 +227,6 @@ header {
     height: 90px;
 }
 
-/* Dynamic color adjustments for custom SVGs */
 .soft-play-showcase .custom-shape-divider-bottom .shape-fill {
     fill: #fdf8f5; 
 }
@@ -270,22 +271,21 @@ header {
     margin: 0;
 }
 
-/* Carousel wrapper framework */
 .carousel-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px;             
+    height: 450px;              
     perspective: 2000px;
-    margin-top: -40px;         
-    margin-bottom: 40px;       
+    margin-top: -40px;          
+    margin-bottom: 40px;        
     position: relative;
 }
 
 .carousel {
     position: relative;
-    width: 280px;              
-    height: 280px;             
+    width: 280px;               
+    height: 280px;              
     transform-style: preserve-3d;
     animation: rotate360 35s linear infinite;
 }
@@ -341,7 +341,7 @@ header {
     line-height: 1.8;
     padding: 0 20px;
     position: relative;
-    z-index: 2;                
+    z-index: 2;                 
 }
 
 .features-container {
@@ -387,68 +387,157 @@ header {
     margin: 0;
 }
 
-/* CTA Elements */
 .soft-play-cta {
     margin-top: 50px;
     position: relative;
     z-index: 5;
 }
 
-.soft-play-btn {
-    display: inline-block;
-    background-color: #2c3e50;
-    color: #ffffff;
-    padding: 16px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.15);
-}
-
-.soft-play-btn:hover {
-    background-color: #1f2d3a;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(44, 62, 80, 0.22);
-}
-
 /* ======================================================
-   GALLERY & 3D FLIPPING PRODUCT CARDS
+   GALLERY & GRID CONTAINERS
 ====================================================== */
 .gallery { 
-    padding: 50px 10px; 
-    max-width: 2000px; 
+    padding: 50px 20px; 
+    max-width: 1200px; 
     margin: 0 auto;    
-    width: 75%;        
+    width: 100%;        
 }
 
 .header-text {
     padding: 20px;
-    flex-grow: 1;
     text-align: center;
 }
 
 .gallery h2 { 
     text-align: center; 
     font-family: 'Playfair Display', serif; 
-    color: #333; 
+    color: #0A145A; 
     margin-bottom: 30px;
 }
 
 .grid { 
     display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px; 
     justify-content: center; 
     margin: 0 auto;
-    max-width: 1200px; 
     width: 100%;
 }
 
-/* 3D Card Engine Container */
+/* ======================================================
+   PRICING & INVESTMENT PACKAGES ENGINE
+====================================================== */
 .card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.featured-tier {
+    border: 2px solid #0A145A;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(10, 20, 90, 0.08);
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin: 10px 0 15px 0;
+    color: #0A145A;
+}
+
+.package-img {
+    width: 100%;
+    height: 220px;        
+    object-fit: cover;    
+    border-radius: 8px;   
+    margin: 15px 0;        
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+}
+
+.price-amount {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0A145A;
+    margin-bottom: 10px;
+}
+
+.price-period {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #777;
+    display: block;
+}
+
+.package-desc {
+    font-size: 0.95rem;
+    color: #666;
+    min-height: 48px;
+    margin: 0 0 15px 0;
+}
+
+/* Heart List Custom Bullets */
+.heart-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 15px 0 25px 0;
+    text-align: left;
+}
+
+.heart-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.heart-list li::before {
+    content: "🩵";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.85rem;
+}
+
+.soft-play-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #0A145A;
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.soft-play-btn:hover {
+    background-color: #bc936a;
+    transform: translateY(-2px);
+}
+
+/* ======================================================
+   3D CARD ENGINE (FOR ROTATING PRODUCT TILES)
+====================================================== */
+.flip-card {
     background-color: transparent;
     width: 100%;
     height: 400px;
@@ -465,7 +554,7 @@ header {
     transform-style: preserve-3d;
 }
 
-.card:hover .card-inner {
+.flip-card:hover .card-inner {
     transform: rotateY(180deg);
 }
 
@@ -480,11 +569,10 @@ header {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Front Card Layout */
 .card-front {
     background-color: #fff;
 }
-     
+      
 .card-front img {
     width: 100%;
     height: 100%;
@@ -503,7 +591,6 @@ header {
     font-weight: 600;
 }
 
-/* Back Card Layout */
 .card-back {
     background-color: #fdf8f5; 
     color: #2c3e50;
@@ -538,105 +625,19 @@ header {
 }
 
 /* ======================================================
-   PRICING & INVESTMENT PACKAGES ENGINE
-====================================================== */
-.pricing-card {
-    background-color: #fdf8f5;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    min-height: 420px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.pricing-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin: 0 0 15px 0;
-    color: #0A145A;
-}
-
-.price-amount {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.price-period {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #777;
-}
-
-.package-desc {
-    font-size: 0.9rem;
-    color: #666;
-    min-height: 50px;
-    margin: 0 0 15px 0;
-}
-
-.package-btn {
-    margin-top: auto;
-    background-color: #0A145A;
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 0.95rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Lato', sans-serif;
-    transition: background-color 0.3s ease;
-}
-
-.package-btn:hover {
-    background-color: #71c1e8;
-}
-
-.featured-tier {
-    border: 2px solid #0A145A;
-    transform: scale(1.03);
-    background-color: #ffffff;
-    box-shadow: 0 10px 25px rgba(10, 20, 90, 0.08);
-}
-
-.package-img {
-    width: 100%;
-    height: 450px;        
-    object-fit: contain;    
-    border-radius: 8px;   
-    margin: 15px 0;       
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
-}
-
-/* Heart Lists Custom Design */
-.heart-list {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.heart-list li::marker {
-    content: "🩵 ";
-    color: #ff4d6d; 
-    font-size: 1.2em; 
-}
-
-/* ======================================================
    ENQUIRY CONTACT FORM
 ====================================================== */
 .enquiry { 
-    background: #FFF; 
-    color: black; 
-    padding: 50px 20px; 
+    background: #0A145A; 
+    color: white; 
+    padding: 60px 20px; 
     text-align: center; 
 }
 
 .enquiry h2 { 
-    color: #000; 
+    color: #ffffff; 
     font-family: 'Playfair Display', serif; 
+    margin-bottom: 30px;
 }
 
 .enquiry form { 
@@ -648,11 +649,11 @@ header {
 
 .enquiry input, 
 .enquiry textarea { 
-    width: 100%;              
+    width: 100%;               
     padding: 12px 15px;      
-    margin-bottom: 20px;     
+    margin-bottom: 15px;      
     border: 1px solid #ccc;  
-    border-radius: 5px;      
+    border-radius: 4px;      
     background-color: #fff;  
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
@@ -663,38 +664,38 @@ header {
 .enquiry input:focus, 
 .enquiry textarea:focus {
     outline: none;
-    border-color: #0A145A;   
-    box-shadow: 0 0 5px rgba(10, 20, 90, 0.2);
+    border-color: #bc936a;   
+    box-shadow: 0 0 5px rgba(188, 147, 106, 0.5);
 }
 
 .enquiry button { 
-    background: #0A145A; 
+    background: #bc936a; 
     color: white; 
     border: none; 
     padding: 15px; 
     cursor: pointer; 
     font-size: 1rem; 
+    font-weight: bold;
     border-radius: 4px; 
     transition: background-color 0.3s;
 }
 
 .enquiry button:hover { 
-    background: #71c1e8; 
+    background: #a37c55; 
 }
 
-/* File Attachment Framework */
 .file-upload-wrapper {
     margin-bottom: 20px;
     text-align: left;
-    background: rgba(0, 0, 0, 0.02); 
+    background: rgba(255, 255, 255, 0.05); 
     padding: 15px;
-    border: 1px dashed #ccc;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
     border-radius: 4px;
 }
 
 .upload-label {
     display: block;
-    color: #333;
+    color: #fff;
     font-family: 'Lato', sans-serif;
     margin-bottom: 10px;
     cursor: pointer;
@@ -702,16 +703,16 @@ header {
 }
 
 .file-input {
-    color: #666;
+    color: #ccc;
     font-size: 0.8rem;
     width: 100%;
 }
 
 input[type="file"]::file-selector-button {
-    background: #0A145A;
+    background: #bc936a;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 4px;
     cursor: pointer;
     margin-right: 10px;
@@ -720,14 +721,14 @@ input[type="file"]::file-selector-button {
 }
 
 input[type="file"]::file-selector-button:hover {
-    background: #71c1e8;
+    background: #a37c55;
 }
 
 /* ======================================================
    FOOTER & SOCIAL CONNECTORS
 ====================================================== */
 footer {
-    background-color: #71c1e8; 
+    background-color: #050a2e; 
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -771,8 +772,6 @@ footer {
 /* ======================================================
    RESPONSIVE MEDIA QUERIES
 ====================================================== */
-
-/* Tablets Viewport Framework (Under 1024px) */
 @media (max-width: 1024px) {
     .grid {
         grid-template-columns: repeat(2, 1fr); 
@@ -801,7 +800,6 @@ footer {
     }
 }
 
-/* Phones Viewport Framework (Under 768px) */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column; 
@@ -810,7 +808,6 @@ footer {
         text-align: center;
     }
 
-    /* Fixed Layout adjustments for Mobile Containers */
     .header-left,
     .header-search {
         width: 100%;
@@ -829,11 +826,10 @@ footer {
         gap: 12px;
     }
 
-    /* Standardizes structural sizing constraints across elements */
     .nav-btn {
         width: 100%;
         max-width: 280px;
-        height: 44px; /* Slightly larger targets for easier tapping */
+        height: 44px;
     }
     
     .header-search form,
@@ -847,11 +843,11 @@ footer {
     }
 
     .search-input {
-        width: 100%; /* Allows form to scale properly inside bounded width */
+        width: 100%;
     }
 
     .logo {
-        max-width: 200px; /* Kept compact to conserve vertical space */
+        max-width: 200px;
         margin: 0 auto;
     }
 
@@ -863,7 +859,6 @@ footer {
         font-size: 2.0rem;
     }
 
-    /* 3D Carousel Mobile adjustments */
     .carousel-wrapper {
         height: 340px; 
         min-height: 340px;
@@ -886,7 +881,6 @@ footer {
         box-shadow: 0 10px 30px rgba(44, 62, 80, 0.15);
     }
 
-    /* Trust features configuration adjustments */
     .trust-features {
         padding: 80px 20px 100px;
     }
@@ -910,7 +904,6 @@ footer {
         height: 60px; 
     }
 
-    /* Gallery Grid & Pricing Tier Collapse */
     .grid {
         grid-template-columns: 1fr !important;
         gap: 25px;
@@ -918,17 +911,11 @@ footer {
     
     .gallery {
         padding: 20px 15px;
-        width: 90%;
+        width: 100%;
     }
 
-    /* Adjust imagery behavior inside structural cards on mobile */
     .package-img {
-        height: 170px;    
-    }
-
-    /* Reset package scales on smaller mobile screens to maintain layout containment */
-    .featured-tier {
-        transform: none;
+        height: 200px;    
     }
 }
 
