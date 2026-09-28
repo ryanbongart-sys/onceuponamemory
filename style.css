@@ -34,7 +34,7 @@ h2, h3, h4 {
    HEADER STYLING
 ====================================================== */
 header {
-    background-color: #0A145A;
+    background-color: #f9fafd;
     color: white;
     padding: 30px 20px;
     position: relative;
@@ -411,7 +411,7 @@ header {
 .gallery h2 { 
     text-align: center; 
     font-family: 'Playfair Display', serif; 
-    color: #0A145A; 
+    color: #f9fafd; 
     margin-bottom: 30px;
 }
 
@@ -447,7 +447,7 @@ header {
 }
 
 .featured-tier {
-    border: 2px solid #0A145A;
+    border: 2px solid #f9fafd;
     background-color: #ffffff;
     box-shadow: 0 10px 25px rgba(10, 20, 90, 0.08);
 }
@@ -456,7 +456,7 @@ header {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     margin: 10px 0 15px 0;
-    color: #0A145A;
+    color: #f9fafd;
 }
 
 .package-img {
@@ -471,7 +471,7 @@ header {
 .price-amount {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #0A145A;
+    color: #f9fafd;
     margin-bottom: 10px;
 }
 
@@ -517,7 +517,7 @@ header {
     display: block;
     width: 100%;
     text-align: center;
-    background-color: #0A145A;
+    background-color: #f9fafd;
     color: #ffffff;
     padding: 14px 20px;
     border-radius: 6px;
@@ -628,7 +628,7 @@ header {
    ENQUIRY CONTACT FORM
 ====================================================== */
 .enquiry { 
-    background: #0A145A; 
+    background: #f9fafd; 
     color: white; 
     padding: 60px 20px; 
     text-align: center; 
