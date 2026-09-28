@@ -1238,16 +1238,7 @@ header {
 
 
 
-.heart-list li::marker {
-
-    content: "🩵 ";
-
-    color: #ff4d6d; 
-
-    font-size: 1.2em; 
-
-}
-
+.heart-list li::before { content: "🩵"; margin-right: 8px; }
 
 
 /* ======================================================
