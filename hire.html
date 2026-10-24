@@ -4,30 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipment Hire & Delivery | Once Upon a Memory Designs</title>
-    <link rel="stylesheet" href="gallerystyle.css">
+    <!-- Linked to unified main stylesheet -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* MAIN THEME RE-ALIGNMENT (Matching Landing Page Sky Blue) */
+        /* MAIN THEME RE-ALIGNMENT */
         body {
             font-family: 'Lato', sans-serif;
             margin: 0;
-            background-color: #7ec5f2; /* Styled to match main page background */
+            background-color: #7ec5f2; 
             color: #333;
             line-height: 1.6;
-        }
-
-        header {
-            background: #fff;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .logo {
-            max-width: 220px;
-            height: auto;
         }
 
         .hire-hero {
@@ -49,7 +38,7 @@
             font-weight: 300;
         }
 
-        /* NEW SLIDE ACROSS IMAGE GALLERY */
+        /* SLIDE ACROSS IMAGE GALLERY */
         .gallery-section {
             max-width: 1200px;
             margin: 40px auto;
@@ -75,7 +64,6 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Style the scrollbar to make it look elegant */
         .slider-container::-webkit-scrollbar {
             height: 8px;
         }
@@ -178,15 +166,7 @@
             margin: 0;
         }
 
-        /* UPDATED ENQUIRY FORM STYLES */
-        .enquiry {
-            background: #fff;
-            color: #333;
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid #e2e8f0;
-        }
-
+        /* ENQUIRY FORM STYLES */
         .enquiry-container {
             max-width: 550px;
             margin: 0 auto;
@@ -206,87 +186,6 @@
         .enquiry-container p {
             margin-bottom: 30px;
             color: #666;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        input, textarea {
-            margin-bottom: 15px;
-            padding: 14px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: 'Lato', sans-serif;
-            background-color: #f8fafc;
-            color: #333;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #7ec5f2;
-            background-color: #fff;
-            box-shadow: 0 0 0 3px rgba(126, 197, 242, 0.2);
-        }
-
-        button[type="submit"] {
-            background: #7ec5f2;
-            color: white;
-            border: none;
-            padding: 16px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 6px;
-            transition: 0.3s;
-            box-shadow: 0 4px 12px rgba(126, 197, 242, 0.3);
-        }
-
-        button[type="submit"]:hover {
-            background: #bc936a;
-            box-shadow: 0 4px 12px rgba(188, 147, 106, 0.3);
-        }
-
-        /* UPDATED FOOTER STYLES */
-        footer {
-            background: #1a365d; /* Cohesive deep blue matching the typography tone */
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .footer-content p {
-            margin: 0 0 20px 0;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            color: #e2e8f0;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-btn {
-            color: #1a365d;
-            background: #fff;
-            width: 42px;
-            height: 42px;
-            line-height: 42px;
-            border-radius: 50%;
-            display: inline-block;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .social-btn:hover {
-            background: #bc936a;
-            color: #fff;
-            transform: scale(1.1) translateY(-2px);
         }
     </style>
 </head>
@@ -320,25 +219,25 @@
             </div>
         </div>
     </header>
-<section class="Sec2" style="background: #fdf8f5; padding: 60px 20px;">
+
+    <section class="Sec2" style="background: #fdf8f5; padding: 60px 20px;">
         <div style="max-width: 800px; margin: auto;">
             <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: #333; margin-bottom: 30px;">Our Personalised Signage Menu</h2>
             
-            <p style="text-align: center; margin-bottom: 40px; color: #666;">Please find below the Once Upon a Memory Signage Pricing Schedule. If th  </p>
+            <p style="text-align: center; margin-bottom: 40px; color: #666;">Please find below the Once Upon a Memory Signage Pricing Schedule.</p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                 <div>
                     <h4 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #0A145A; margin-bottom: 15px; border-bottom: 2px solid #0A145A; padding-bottom: 5px;">Entries & Welcomes</h4>
-                     <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
                         <li style="display: flex; justify-content: space-between;"><span>A2 Composite (White/Black) Welcome Sign</span> <strong>From $160</strong></li>
                         <li style="display: flex; justify-content: space-between;"><span>A2 Foam Welcome Sign</span> <strong>From $130</strong></li>
                         <li style="display: flex; justify-content: space-between;"><span>A2 Composite (White/Black) Seating Chart</span> <strong>From $205</strong></li>
-                         <li style="display: flex; justify-content: space-between;"><span>A2 Foam Seating Chart</span> <strong>From $160</strong></li>
-                         <li style="display: flex; justify-content: space-between;"><span>Linen Welcome Signage</span> <strong>From $240</strong></li>
-                         <li style="display: flex; justify-content: space-between;"><span>Full Backdrop Package</span> <strong>From $280</strong></li>
+                        <li style="display: flex; justify-content: space-between;"><span>A2 Foam Seating Chart</span> <strong>From $160</strong></li>
+                        <li style="display: flex; justify-content: space-between;"><span>Linen Welcome Signage</span> <strong>From $240</strong></li>
+                        <li style="display: flex; justify-content: space-between;"><span>Full Backdrop Package</span> <strong>From $280</strong></li>
                     </ul>
                 </div>
-            
             
                 <div>
                     <h4 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #0A145A; margin-bottom: 15px; border-bottom: 2px solid #0A145A; padding-bottom: 5px;">Smaller Details</h4>
@@ -353,8 +252,9 @@
                 </div>
             </div>
         </div>
-         <p style="text-align: center; margin-bottom: 40px; color: #666;">All pricing is indictive only and is subject to change dependent on design choices, material requirements, and handling fees. An accurate quote can be provided upon enquiry.</p>
+        <p style="text-align: center; margin-bottom: 40px; color: #666; margin-top: 30px;">All pricing is indicative only and is subject to change dependent on design choices, material requirements, and handling fees. An accurate quote can be provided upon enquiry.</p>
     </section>
+
     <section class="hire-hero">
         <h1>Equipment Hire & Delivery</h1>
         <p>Providing premium event hire pieces and signage across Geelong and surrounds.</p>
@@ -453,8 +353,8 @@
         <div class="footer-content">
             <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
             <div class="social-links">
-                <a href="https://www.instagram.com/onceuponamemorydesigns" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/people/Once-Upon-A-Memory-Designs/61577818255636/" target="_blank" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/onceuponamemorydesigns" target="_blank" class="social-btn instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/people/Once-Upon-A-Memory-Designs/61577818255636/" target="_blank" class="social-btn facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             </div>
         </div>
     </footer>
