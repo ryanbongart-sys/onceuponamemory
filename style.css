@@ -43,11 +43,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allows items to wrap neatly if the screen is squeezed */
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 30px;
+    padding: 0 40px;
     gap: 20px;
 }
 
@@ -56,12 +55,13 @@ header {
 .header-search {
     display: flex;
     align-items: center;
+    gap: 15px;
+    flex: 1;
     min-width: 0; 
 }
 
 .header-left {
-    justify-content: flex-start;
-    gap: 15px;                                         
+    justify-content: flex-start;                                       
 }
 
 .header-search {
@@ -73,14 +73,14 @@ header {
     display: flex;          
     align-items: center;
     justify-content: center;
-    width: 160px;           
+    padding: 0 20px;           
     height: 40px;           
     background-color: rgba(255, 255, 255, 0.1); 
     color: white;
     text-decoration: none;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 20px;    
-    font-size: 1rem;
+    font-size: 0.95rem;
     white-space: nowrap;    
     transition: all 0.3s ease;
 }
@@ -92,8 +92,9 @@ header {
 
 /* Logo Setup */
 .logo-container {
-    flex: 0 1 auto; 
+    flex: 0 0 auto; 
     text-align: center;
+    padding: 0 20px;
 }
 
 .logo-link {
@@ -110,7 +111,7 @@ header {
 }
 
 .logo {
-    max-width: 280px; /* Scaled to prevent mid-screen crowding */
+    max-width: 260px;
     width: 100%;
     height: auto;
     border-radius: 50%;
@@ -140,8 +141,7 @@ header {
     padding: 5px 15px;
     font-family: 'Lato', sans-serif;
     font-size: 0.95rem;
-    width: 200px; /* Flexible width to prevent breaking layouts on standard laptops/Macs */
-    max-width: 100%;             
+    width: 180px;             
     outline: none;
 }
 
@@ -153,7 +153,7 @@ header {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 18px;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;  
     font-size: 0.75rem;
@@ -610,8 +610,8 @@ header {
 .package-img {
     width: 100%;
     height: 440px;        
-    object-fit: contain; /* Prevents Mac/Safari from cropping the graphic */
-    background-color: #f5f8fc; /* Subtle backdrop tint for image scaling box */
+    object-fit: contain; 
+    background-color: #f5f8fc; 
     border-radius: 8px;    
     margin: 15px 0;        
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
@@ -811,17 +811,12 @@ footer {
         text-align: center;
     }
 
-    /* Fixed Layout adjustments for Mobile Containers */
     .header-left,
     .header-search {
         width: 100%;
         flex: none;
         justify-content: center;
-    }
-
-    .header-left {
         flex-direction: column;
-        gap: 12px;
     }
 
     .header-actions {
@@ -830,11 +825,10 @@ footer {
         gap: 12px;
     }
 
-    /* Standardizes structural sizing constraints across elements */
     .nav-btn {
         width: 100%;
         max-width: 280px;
-        height: 44px; /* Larger targets for easier tapping */
+        height: 44px;
     }
     
     .header-search form,
@@ -848,11 +842,11 @@ footer {
     }
 
     .search-input {
-        width: 100%; /* Allows form to scale properly inside bounded width */
+        width: 100%; 
     }
 
     .logo {
-        max-width: 200px; /* Kept compact to conserve vertical space */
+        max-width: 200px; 
         margin: 0 auto;
     }
 
@@ -864,7 +858,6 @@ footer {
         font-size: 2.0rem;
     }
 
-    /* 3D Carousel Mobile adjustments */
     .carousel-wrapper {
         height: 340px; 
         min-height: 340px;
@@ -887,7 +880,6 @@ footer {
         box-shadow: 0 10px 30px rgba(44, 62, 80, 0.15);
     }
 
-    /* Trust features configuration adjustments */
     .trust-features {
         padding: 80px 20px 100px;
     }
@@ -911,7 +903,6 @@ footer {
         height: 60px; 
     }
 
-    /* Gallery Grid & Pricing Tier Collapse */
     .grid {
         grid-template-columns: 1fr !important;
         gap: 25px;
@@ -922,12 +913,10 @@ footer {
         width: 90%;
     }
 
-    /* Adjust imagery behavior inside structural cards on mobile */
     .package-img {
         height: 170px;    
     }
 
-    /* Reset package scales on smaller mobile screens to maintain layout containment */
     .featured-tier {
         transform: none;
     }
