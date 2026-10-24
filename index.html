@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,7 +121,7 @@
                 <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
             </svg>
         </div>
-    </section>
+    </section> 
 
     <section class="gallery">
         <div class="header-text">
@@ -269,6 +268,17 @@
         </form>
     </section>
 
+    <!-- Special Offer Modal Popup -->
+    <div id="offerModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModalBtn">&times;</button>
+            <span class="offer-badge">LIMITED TIME OFFER</span>
+            <h2>10% Off Your First Hire!</h2>
+            <p>Book any soft play package or custom event signage order this month and receive 10% off your booking.</p>
+            <a href="#contact" class="modal-cta-btn" id="claimOfferBtn">Claim Your Offer</a>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Once Upon a Memory Designs | Geelong, VIC</p>
@@ -284,6 +294,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Popup Script (Session Memory Enabled) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("offerModal");
+            const closeBtn = document.getElementById("closeModalBtn");
+            const claimBtn = document.getElementById("claimOfferBtn");
+
+            // Check if user has already seen the offer in this browsing session
+            if (!sessionStorage.getItem("offerSeen")) {
+                setTimeout(() => {
+                    modal.classList.add("active");
+                    sessionStorage.setItem("offerSeen", "true");
+                }, 1000);
+            }
+
+            closeBtn.addEventListener("click", () => modal.classList.remove("active"));
+            claimBtn.addEventListener("click", () => modal.classList.remove("active"));
+            window.addEventListener("click", (e) => {
+                if (e.target === modal) modal.classList.remove("active");
+            });
+        });
+    </script>
 
 </body>
 </html>
