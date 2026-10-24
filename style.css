@@ -1094,7 +1094,10 @@ header {
 
     justify-content: space-between;
 
-    height: 100%;
+    width: 100%;
+    height: auto; /* Lets the height scale naturally */
+    max-height: none; /* Removes any rigid max-height ceiling */
+    object-fit: initial;
 
     min-height: 420px;
 
